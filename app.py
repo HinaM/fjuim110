@@ -38,12 +38,13 @@ def handle_message(event):
     message=event.message.text
     message=message.encode('utf-8')
     if event.message.text=="遊戲任務":
-        line_bot_api.reply_message(  # 回復傳入的訊息文字
+        line_bot_api.reply_message(  
                         event.reply_token,
                         TemplateSendMessage(
+                            alt_text='選擇遊戲任務。',
                             template=ButtonsTemplate(
                                 title='遊戲任務',
-                                text='請選擇任務類型',
+                                text='選擇想遊玩的任務類型',
                                 actions=[
                                     MessageTemplateAction(
                                         label='課程任務',
