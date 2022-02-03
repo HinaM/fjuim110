@@ -1,3 +1,4 @@
+from cgitb import text
 from flask import Flask, request, abort
 
 from linebot import (
@@ -38,35 +39,36 @@ def handle_message(event):
     message=event.message.text
     message=message.encode('utf-8')
     if message=="遊戲任務":
-        reply = TemplateSendMessage(
-        alt_text='ImageCarouselTemplate',
-        template=ImageCarouselTemplate(
-            columns=[
-                ImageCarouselColumn(
-                    image_url="https://upload.cc/i1/2022/02/03/J9OPX7.jpg",
-                    action=URITemplateAction(
-                        label="課程任務",
-                        text="課程任務"
-                    )
-                ),
-                ImageCarouselColumn(
-                    image_url="https://upload.cc/i1/2022/02/03/UKhvma.jpg",
-                    action=URITemplateAction(
-                        label="生活任務",
-                        text="生活任務"
-                    )
-                ),
-                ImageCarouselColumn(
-                    image_url="https://upload.cc/i1/2022/02/03/IkOir7.jpg",
-                    action=URITemplateAction(
-                        label="建築任務",
-                        text="建築任務"
-                    )
+        line_bot_api.reply_message(
+            event.reply_token,
+            TemplateSendMessage(
+                template=ImageCarouselTemplate(
+                    columns=[
+                        ImageCarouselColumn(
+                            image_url="https://upload.cc/i1/2022/02/03/J9OPX7.jpg",
+                            action=URITemplateAction(
+                                label="課程任務",
+                                text="課程任務"
+                            )
+                        ),
+                        ImageCarouselColumn(
+                            image_url="https://upload.cc/i1/2022/02/03/UKhvma.jpg",
+                            action=URITemplateAction(
+                                label="生活任務",
+                                text="生活任務"
+                            )
+                        ),
+                        ImageCarouselColumn(
+                            image_url="https://upload.cc/i1/2022/02/03/IkOir7.jpg",
+                            action=URITemplateAction(
+                                label="建築任務",
+                                text="建築任務"
+                            )
+                        )
+                    ]
                 )
-            ]
+            )
         )
-    )
-        line_bot_api.reply_message(event.reply_token,reply)
     else:    
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=event.message.text))
 
