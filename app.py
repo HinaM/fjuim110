@@ -39,36 +39,29 @@ def handle_message(event):
     message=event.message.text
     message=message.encode('utf-8')
     if event.message.text=="遊戲任務":
-        line_bot_api.reply_message(
-            event.reply_token,
-            TemplateSendMessage(
-                template=ImageCarouselTemplate(
-                    columns=[
-                        ImageCarouselColumn(
-                            image_url="https://upload.cc/i1/2022/02/03/J9OPX7.jpg",
-                            action=URITemplateAction(
-                                label="課程任務",
-                                text="課程任務"
-                            )
-                        ),
-                        ImageCarouselColumn(
-                            image_url="https://upload.cc/i1/2022/02/03/UKhvma.jpg",
-                            action=URITemplateAction(
-                                label="生活任務",
-                                text="生活任務"
-                            )
-                        ),
-                        ImageCarouselColumn(
-                            image_url="https://upload.cc/i1/2022/02/03/IkOir7.jpg",
-                            action=URITemplateAction(
-                                label="建築任務",
-                                text="建築任務"
+        line_bot_api.reply_message(  # 回復傳入的訊息文字
+                        event.reply_token,
+                        TemplateSendMessage(
+                            template=ButtonsTemplate(
+                                title='遊戲任務',
+                                text='請選擇任務類型',
+                                actions=[
+                                    MessageTemplateAction(
+                                        label='課程任務',
+                                        text='課程任務'
+                                    ),
+                                    MessageTemplateAction(
+                                        label='建築任務',
+                                        text='建築任務'
+                                    ),
+                                    MessageTemplateAction(
+                                        label='生活任務',
+                                        text='生活任務'
+                                    )
+                                ]
                             )
                         )
-                    ]
-                )
-            )
-        )
+                    )
     else:    
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=event.message.text))
 
