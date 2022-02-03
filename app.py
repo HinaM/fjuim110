@@ -38,7 +38,7 @@ def callback():
 def handle_message(event):
     message=event.message.text
     message=message.encode('utf-8')
-    if message=="遊戲任務":
+    if event.message.text=="遊戲任務":
         line_bot_api.reply_message(
             event.reply_token,
             TemplateSendMessage(
