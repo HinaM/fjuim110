@@ -64,6 +64,10 @@ def handle_message(event):
                     )
     elif event.message.text=="遊戲規則":
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text="規則是巴拉巴拉之類的"))
+    elif event.message.text=="個人檔案":
+        user_id = event.source.user_id         
+        profile = line_bot_api.get_profile(user_id)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text="學生證"+"\n"+"姓名："+profile.display_name+"\n"+"目前學分數："+"\n"+"還需很多學分升上二年級"))
     else:    
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=event.message.text))
 
