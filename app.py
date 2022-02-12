@@ -56,7 +56,7 @@ def handle_message(event):
             worksheet.update(list[0],event.source.user_id)
             #初始值設定
             worksheet.update(list[5],int(0))
-            for i in range(3,20):
+            for i in range(1,20):
                 worksheet.update(list[i],int(0))
             #這邊還沒施工
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text="請選擇視角"))
