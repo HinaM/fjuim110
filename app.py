@@ -48,6 +48,7 @@ def handle_message(event):
             #這邊還沒施工
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text="已經開始遊戲，要重置嗎"))
         else:
+            #這邊還沒施工
             x=len(userid_list)
             list=[]
             for i in range(65,76):
@@ -55,7 +56,6 @@ def handle_message(event):
             #ID
             worksheet.update(list[0],event.source.user_id)
             #初始值設定
-            worksheet.update(list[5],int(0))
             for i in range(1,20):
                 worksheet.update(list[i],int(0))
             #這邊還沒施工
@@ -159,10 +159,14 @@ def handle_message(event):
             #玩家名稱
             user_id = event.source.user_id         
             profile = line_bot_api.get_profile(user_id)
-            #從exccel取學分
+            #從exccel取學分，施工中
             x=len(userid_list)
             list=[]
-            list.append('B'+str(x+1))
+            for i in range(x):
+                if userid_list[i]==event.source.user_id:
+                    j=i+1
+            list.append('B'+str(j))
+            #施工中
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text="【輔仁大學學生證】"+"\n"+"姓名："+profile.display_name+"\n"+"目前學分數："+worksheet.acell(list[0]).value+"\n"+"還需很多學分升上二年級"))
         else:
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒開始遊戲喔，請輸入「開始遊戲」建立個人檔案。"))
