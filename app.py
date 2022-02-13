@@ -55,10 +55,10 @@ def handle_message(event):
                 list.append(chr(i)+str(x+1))
             #ID
             worksheet.update(list[0],event.source.user_id)
-            worksheet.update(list[3],int(1))
             #初始值設定
             for i in range(2,len(list)):
                 worksheet.update(list[i],int(0))
+            worksheet.update(list[3],int(1))
             confirm_template_message = TemplateSendMessage(
                 alt_text='請選擇視角',
                 template=ConfirmTemplate(
