@@ -161,10 +161,10 @@ def handle_message(event):
             list.append('C'+str(j))
             #升級所需學分施工中
             #還沒選擇視角
-            if worksheet.acell(list[1]).value==0:
+            if worksheet.acell(list[1]).value=="0":
                 line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒選擇視角喔，請輸入「以日向的視角進行遊戲」或「以小光的視角進行遊戲」。"))
             #日向視角
-            elif worksheet.acell(list[1]).value==1:
+            elif worksheet.acell(list[1]).value=="1":
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text="【輔仁大學學生證】"+"\n"+"姓名：日向"+"\n"+"目前學分數："+worksheet.acell(list[0]).value+"\n"+"還需很多學分升上二年級"))
             #小光視角
             else:
