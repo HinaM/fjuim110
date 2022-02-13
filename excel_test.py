@@ -10,13 +10,15 @@ print(res)
 userid_list=worksheet.col_values(1)
 print(userid_list)
 
-x=len(userid_list)
-list=[]
-for i in range(65,76):
-    list.append(chr(i)+str(x+1))
-#ID
-worksheet.update(list[0],"Ud184a816c79cdc37caaf18bc97051cec")
-#初始值設定
-for i in range(1,len(list)):
-    worksheet.update(list[i],int(0))
-print("成功")
+if "Ud184a816c79cdc37caaf18bc97051cec" in userid_list:
+            for i in range(len(userid_list)):
+                if userid_list[i]=="Ud184a816c79cdc37caaf18bc97051cec":
+                    j=i+1
+            list=[]
+            for i in range(66,76):
+                list.append(chr(i)+str(j))
+            #題目數量施工中
+            #初始值設定
+            for i in range(0,len(list)):
+                worksheet.update(list[i],int(0))
+            worksheet.update(list[2],int(1))

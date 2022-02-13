@@ -255,7 +255,7 @@ def handle_message(event):
                     j=i+1
             list=[]
             for i in range(66,76):
-                list.append(chr(i)+str(x+1))
+                list.append(chr(i)+str(j))
             #題目數量施工中
             #初始值設定
             for i in range(0,len(list)):
