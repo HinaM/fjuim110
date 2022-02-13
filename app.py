@@ -57,23 +57,23 @@ def handle_message(event):
             #初始值設定
             for i in range(1,20):
                 worksheet.update(list[i],int(0))
-            message = TemplateSendMessage(
+            confirm_template_message = TemplateSendMessage(
                 alt_text='請選擇視角',
                 template=ConfirmTemplate(
-                    text="選擇以日向（男主角）或小光（女主角）的視角進行遊戲。",
-                    actions=[
-                        PostbackTemplateAction(
-                            label="日向",
-                            text="以日向的視角進行遊戲"
-                        ),
-                        PostbackTemplateAction(
-                            label="小光",
-                            text="以小光的視角進行遊戲"
-                        )
-                    ]
+                text='選擇以日向（男主角）或是小光（女主角）的視角遊玩。',
+                actions=[
+                    MessageAction(
+                        label='日向',
+                        text='以日向的視角進行遊戲'
+                    ),
+                    MessageAction(
+                        label='小光',
+                        text='以小光的視角進行遊戲'
+                    )
+                ]
                 )
             )
-            line_bot_api.reply_message(event.reply_token,message)
+            line_bot_api.reply_message(event.reply_token,confirm_template_message)
     
     elif event.message.text=="以日向的視角進行遊戲":
         userid_list=worksheet.col_values(1)
@@ -197,23 +197,23 @@ def handle_message(event):
             #升級所需學分施工中
             #還沒選擇視角
             if worksheet.acell(list[1]).value=="0":
-                message = TemplateSendMessage(
+                confirm_template_message = TemplateSendMessage(
                 alt_text='請選擇視角',
                 template=ConfirmTemplate(
-                    text="選擇以日向（男主角）或小光（女主角）的視角進行遊戲。",
-                    actions=[
-                        PostbackTemplateAction(
-                            label="日向",
-                            text="以日向的視角進行遊戲"
-                        ),
-                        PostbackTemplateAction(
-                            label="小光",
-                            text="以小光的視角進行遊戲"
-                        )
-                    ]
+                text='選擇以日向（男主角）或是小光（女主角）的視角遊玩。',
+                actions=[
+                    MessageAction(
+                        label='日向',
+                        text='以日向的視角進行遊戲'
+                    ),
+                    MessageAction(
+                        label='小光',
+                        text='以小光的視角進行遊戲'
+                    )
+                ]
                 )
-            )
-                line_bot_api.reply_message(event.reply_token,message)
+                )
+                line_bot_api.reply_message(event.reply_token,confirm_template_message)
             #日向視角
             elif worksheet.acell(list[1]).value=="1":
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text="【輔仁大學學生證】"+"\n"+"姓名：日向"+"\n"+"目前學分數："+worksheet.acell(list[0]).value+"\n"+"還需很多學分升上二年級"))
