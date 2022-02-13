@@ -48,7 +48,6 @@ def handle_message(event):
             #重置設定施工中
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text="已經開始遊戲，要重置嗎"))
         else:
-            line_bot_api.reply_message(event.replt_token,TextSendMessage(text="要以誰的視角觀看劇情呢？請輸入「選擇視角」進行設定。"))
             x=len(userid_list)
             list=[]
             for i in range(65,76):
@@ -58,7 +57,7 @@ def handle_message(event):
             #初始值設定
             for i in range(1,20):
                 worksheet.update(list[i],int(0))
-            
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(text="要以誰的視角觀看劇情呢？請輸入「選擇視角」進行設定。"))
 
     elif event.message.text=="選擇視角":
         confirm_template_message = TemplateSendMessage(
