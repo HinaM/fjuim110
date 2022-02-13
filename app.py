@@ -46,7 +46,7 @@ def handle_message(event):
         userid_list=worksheet.col_values(1)
         if event.source.user_id in userid_list:
             #重置設定施工中
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(text="已經開始遊戲，要重置嗎"))
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(text="已經開始遊戲，要重新開始請輸入「重置遊戲」"))
         else:
             userid_list=worksheet.col_values(1)
             x=len(userid_list)
@@ -116,7 +116,7 @@ def handle_message(event):
         #ID未寫入
         else:
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒建立個人檔案喔，輸入「開始遊戲」建立。"))
-            
+
     elif event.message.text=="以小光的視角進行遊戲":
         userid_list=worksheet.col_values(1)
         #ID已寫入
@@ -221,20 +221,20 @@ def handle_message(event):
             #還沒選擇視角
             if worksheet.acell(list[1]).value=="0":
                 confirm_template_message = TemplateSendMessage(
-                alt_text='請選擇視角',
-                template=ConfirmTemplate(
-                text='選擇以日向（男主角）或是小光（女主角）的視角遊玩。',
-                actions=[
-                    MessageAction(
-                        label='日向',
-                        text='以日向的視角進行遊戲'
-                    ),
-                    MessageAction(
-                        label='小光',
-                        text='以小光的視角進行遊戲'
+                    alt_text='請選擇視角',
+                    template=ConfirmTemplate(
+                        text='選擇以日向（男主角）或是小光（女主角）的視角遊玩。',
+                        actions=[
+                            MessageAction(
+                                label='日向',
+                                text='以日向的視角進行遊戲'
+                            ),
+                            MessageAction(
+                                label='小光',
+                                text='以小光的視角進行遊戲'
+                            )
+                        ]
                     )
-                ]
-                )
                 )
                 line_bot_api.reply_message(event.reply_token,confirm_template_message)
             #日向視角
@@ -245,6 +245,42 @@ def handle_message(event):
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text="【輔仁大學學生證】"+"\n"+"姓名：小光"+"\n"+"目前學分數："+worksheet.acell(list[0]).value+"\n"+"還需很多學分升上二年級"))   
         else:
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒開始遊戲喔，請輸入「開始遊戲」建立個人檔案。"))
+
+    elif event.message.text=="重置遊戲":
+        userid_list=worksheet.col_values(1)
+        #已寫入ID
+        if event.source.user_id in userid_list:
+            for i in range(len(userid_list)):
+                if userid_list[i]==event.source.user_id:
+                    j=i+1
+            list=[]
+            for i in range(66,76):
+                list.append(chr(i)+str(x+1))
+            #題目數量施工中
+            #初始值設定
+            for i in range(0,len(list)):
+                worksheet.update(list[i],int(0))
+            worksheet.update(list[2],int(1))
+            confirm_template_message = TemplateSendMessage(
+                alt_text='請選擇視角',
+                template=ConfirmTemplate(
+                    text='選擇以日向（男主角）或是小光（女主角）的視角遊玩。',
+                    actions=[
+                        MessageAction(
+                            label='日向',
+                            text='以日向的視角進行遊戲'
+                        ),
+                        MessageAction(
+                            label='小光',
+                            text='以小光的視角進行遊戲'
+                        )
+                    ]
+                )
+            )
+            line_bot_api.reply_message(event.reply_token,confirm_template_message)
+        #未寫入ID
+        else:
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒建立開始遊戲喔，請輸入「開始遊戲」建立個人檔案。"))
 
     else:    
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text="答錯了，想想看喔"))
