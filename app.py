@@ -64,11 +64,11 @@ def handle_message(event):
                     actions=[
                         PostbackTemplateAction(
                             label="日向",
-                            data="以日向的視角進行遊戲"
+                            text="以日向的視角進行遊戲"
                         ),
                         PostbackTemplateAction(
                             label="小光",
-                            data="以小光的視角進行遊戲"
+                            text="以小光的視角進行遊戲"
                         )
                     ]
                 )
@@ -204,11 +204,11 @@ def handle_message(event):
                     actions=[
                         PostbackTemplateAction(
                             label="日向",
-                            data="以日向的視角進行遊戲"
+                            text="以日向的視角進行遊戲"
                         ),
                         PostbackTemplateAction(
                             label="小光",
-                            data="以小光的視角進行遊戲"
+                            text="以小光的視角進行遊戲"
                         )
                     ]
                 )
