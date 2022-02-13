@@ -8,12 +8,18 @@ res=worksheet.get_all_records()
 print(res)
 
 userid_list=worksheet.col_values(1)
+print(userid_list)
+
 if "Ud184a816c79cdc37caaf18bc97051cec" in userid_list:
-    #從exccel取學分
-    x=len(userid_list)
-    list=[]
-    for i in range(x):
+    for i in range(len(userid_list)):
         if userid_list[i]=="Ud184a816c79cdc37caaf18bc97051cec":
             j=i+1
-    list.append('B'+str(j))
-    print(worksheet.acell(list[0]).value)
+            list=[]
+            list.append('C'+str(j))
+            #ID已寫入且已選擇視角
+            if worksheet.acell(list[0]).value=="0":
+                worksheet.update(list[0],int(1))
+                print("j06t/6")
+            #個人檔案已建立且視角!=0
+            else:
+                print("j06t")

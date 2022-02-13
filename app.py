@@ -79,13 +79,13 @@ def handle_message(event):
         userid_list=worksheet.col_values(1)
         #ID已寫入
         if event.source.user_id in userid_list:
-            for i in userid_list:
+            for i in range(len(userid_list)):
                 if userid_list[i]==event.source.user_id:
                     j=i+1
             list=[]
             list.append('C'+str(j))
             #ID已寫入且已選擇視角
-            if worksheet.acell(list[0]).value==0:
+            if worksheet.acell(list[0]).value=="0":
                 worksheet.update(list[0],"1")
                 line_bot_api.reply_message(event.reply_token,TextSendMessage(text="選擇了日向視角，選擇遊戲任務開始遊戲吧！"))
             #個人檔案已建立且視角!=0
@@ -98,13 +98,13 @@ def handle_message(event):
         userid_list=worksheet.col_values(1)
         #ID已寫入
         if event.source.user_id in userid_list:
-            for i in userid_list:
+            for i in range(len(userid_list)):
                 if userid_list[i]==event.source.user_id:
                     j=i+1
             list=[]
             list.append('C'+str(j))
             #ID已寫入且已選擇視角
-            if worksheet.acell(list[0]).value==0:
+            if worksheet.acell(list[0]).value=="0":
                 worksheet.update(list[0],"2")
                 line_bot_api.reply_message(event.reply_token,TextSendMessage(text="選擇了小光視角，選擇遊戲任務開始遊戲吧！"))
             #個人檔案已建立且視角!=0
