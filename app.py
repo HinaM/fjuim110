@@ -74,11 +74,46 @@ def handle_message(event):
                 )
             )
             line_bot_api.reply_message(event.reply_token,message)
-    #施工中
+    
     elif event.message.text=="以日向的視角進行遊戲":
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="。"))
+        userid_list=worksheet.col_values(1)
+        #ID已寫入
+        if event.source.user_id in userid_list:
+            for i in userid_list:
+                if userid_list[i]==event.source.user_id:
+                    j=i+1
+            list=[]
+            list.append('C'+str(j))
+            #ID已寫入且已選擇視角
+            if worksheet.acell(list[0]).value==0:
+                worksheet.update(list[0],"1")
+                line_bot_api.reply_message(event.reply_token,TextSendMessage(text="選擇了日向視角，選擇遊戲任務開始遊戲吧！"))
+            #個人檔案已建立且視角!=0
+            else:
+                line_bot_api.reply_message(event.reply_token,TextSendMessage(text="已經選日向視角，要重置請輸入「重置遊戲」。"))
+        #ID未寫入
+        else:
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒建立個人檔案喔，輸入「開始遊戲」建立。"))
     elif event.message.text=="以小光的視角進行遊戲":
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="。"))
+        userid_list=worksheet.col_values(1)
+        #ID已寫入
+        if event.source.user_id in userid_list:
+            for i in userid_list:
+                if userid_list[i]==event.source.user_id:
+                    j=i+1
+            list=[]
+            list.append('C'+str(j))
+            #ID已寫入且已選擇視角
+            if worksheet.acell(list[0]).value==0:
+                worksheet.update(list[0],"2")
+                line_bot_api.reply_message(event.reply_token,TextSendMessage(text="選擇了小光視角，選擇遊戲任務開始遊戲吧！"))
+            #個人檔案已建立且視角!=0
+            else:
+                line_bot_api.reply_message(event.reply_token,TextSendMessage(text="已經選小光視角，要重置請輸入「重置遊戲」。"))
+        #ID未寫入
+        else:
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒建立個人檔案喔，輸入「開始遊戲」建立。"))
+
     #文字施工中
     elif event.message.text=="遊戲規則":
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text="發生在輔大資管系某一屆普通卻又不普通的故事，透過回答問題一步步解鎖劇情。"+"\n"+"問題分成三類：生活、建築、課程，回答課程類問題可以增加學分升級喔。"))
