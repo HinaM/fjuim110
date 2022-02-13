@@ -56,7 +56,7 @@ def handle_message(event):
             #ID
             worksheet.update(list[0],event.source.user_id)
             #初始值設定
-            for i in range(2,len(list)):
+            for i in range(1,len(list)):
                 worksheet.update(list[i],int(0))
             worksheet.update(list[3],int(1))
             confirm_template_message = TemplateSendMessage(
