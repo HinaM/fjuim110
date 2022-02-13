@@ -57,7 +57,10 @@ def handle_message(event):
             #初始值設定
             for i in range(1,20):
                 worksheet.update(list[i],int(0))
-            confirm_template_message = TemplateSendMessage(
+            line_bot_api.reply_message(event.replt_token,TextSendMessage(text="要以誰的視角觀看劇情呢？請輸入「選擇視角」進行設定。"))
+
+    elif event.message.text=="選擇視角":
+        confirm_template_message = TemplateSendMessage(
                 alt_text='請選擇視角',
                 template=ConfirmTemplate(
                 text='選擇以日向（男主角）或是小光（女主角）的視角遊玩。',
@@ -73,8 +76,8 @@ def handle_message(event):
                 ]
                 )
             )
-            line_bot_api.reply_message(event.reply_token,confirm_template_message)
-    
+        line_bot_api.reply_message(event.reply_token,confirm_template_message)    
+
     elif event.message.text=="以日向的視角進行遊戲":
         userid_list=worksheet.col_values(1)
         #ID已寫入
