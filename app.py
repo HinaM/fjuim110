@@ -58,7 +58,24 @@ def handle_message(event):
             #初始值設定
             for i in range(1,len(list)):
                 worksheet.update(list[i],int(0))
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(text="要以誰的視角觀看劇情呢？請輸入「選擇視角」進行設定。"))
+            confirm_template_message = TemplateSendMessage(
+                alt_text='請選擇視角',
+                template=ConfirmTemplate(
+                text='選擇以日向（男主角）或是小光（女主角）的視角遊玩。',
+                actions=[
+                    MessageAction(
+                        label='日向',
+                        text='以日向的視角進行遊戲'
+                    ),
+                    MessageAction(
+                        label='小光',
+                        text='以小光的視角進行遊戲'
+                    )
+                ]
+                )
+            )
+            line_bot_api.reply_message(event.reply_token,confirm_template_message)    
+            
 
     elif event.message.text=="選擇視角":
         confirm_template_message = TemplateSendMessage(
