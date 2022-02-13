@@ -10,16 +10,13 @@ print(res)
 userid_list=worksheet.col_values(1)
 print(userid_list)
 
-if "Ud184a816c79cdc37caaf18bc97051cec" in userid_list:
-    for i in range(len(userid_list)):
-        if userid_list[i]=="Ud184a816c79cdc37caaf18bc97051cec":
-            j=i+1
-            list=[]
-            list.append('C'+str(j))
-            #ID已寫入且已選擇視角
-            if worksheet.acell(list[0]).value=="0":
-                worksheet.update(list[0],int(1))
-                print("j06t/6")
-            #個人檔案已建立且視角!=0
-            else:
-                print("j06t")
+x=len(userid_list)
+list=[]
+for i in range(65,76):
+    list.append(chr(i)+str(x+1))
+#ID
+worksheet.update(list[0],"Ud184a816c79cdc37caaf18bc97051cec")
+#初始值設定
+for i in range(1,len(list)):
+    worksheet.update(list[i],int(0))
+print("成功")
