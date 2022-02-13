@@ -55,8 +55,9 @@ def handle_message(event):
                 list.append(chr(i)+str(x+1))
             #ID
             worksheet.update(list[0],event.source.user_id)
+            worksheet.update(list[3],int(1))
             #初始值設定
-            for i in range(1,len(list)):
+            for i in range(2,len(list)):
                 worksheet.update(list[i],int(0))
             confirm_template_message = TemplateSendMessage(
                 alt_text='請選擇視角',
@@ -107,7 +108,7 @@ def handle_message(event):
             list.append('C'+str(j))
             #ID已寫入且已選擇視角
             if worksheet.acell(list[0]).value=="0":
-                worksheet.update(list[0],"1")
+                worksheet.update(list[0],int(1))
                 line_bot_api.reply_message(event.reply_token,TextSendMessage(text="選擇了日向視角，選擇遊戲任務開始遊戲吧！"))
             #個人檔案已建立且視角!=0
             else:
@@ -126,7 +127,7 @@ def handle_message(event):
             list.append('C'+str(j))
             #ID已寫入且已選擇視角
             if worksheet.acell(list[0]).value=="0":
-                worksheet.update(list[0],"2")
+                worksheet.update(list[0],int(2))
                 line_bot_api.reply_message(event.reply_token,TextSendMessage(text="選擇了小光視角，選擇遊戲任務開始遊戲吧！"))
             #個人檔案已建立且視角!=0
             else:
