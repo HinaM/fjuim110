@@ -45,10 +45,9 @@ def handle_message(event):
     if event.message.text=="開始遊戲":
         userid_list=worksheet.col_values(1)
         if event.source.user_id in userid_list:
-            #這邊還沒施工
+            #重置設定施工中
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text="已經開始遊戲，要重置嗎"))
         else:
-            #這邊還沒施工
             x=len(userid_list)
             list=[]
             for i in range(65,76):
@@ -58,36 +57,29 @@ def handle_message(event):
             #初始值設定
             for i in range(1,20):
                 worksheet.update(list[i],int(0))
-            #這邊還沒施工
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(text="請選擇視角"))
-            '''
-    if event.message.text=="遊戲任務":
-        line_bot_api.reply_message(  
-                        event.reply_token,
-                        TemplateSendMessage(
-                            alt_text='選擇遊戲任務。',
-                            template=ButtonsTemplate(
-                                title='遊戲任務',
-                                text='選擇想遊玩的任務類型',
-                                actions=[
-                                    MessageTemplateAction(
-                                        label='課程任務',
-                                        text='課程任務'
-                                    ),
-                                    MessageTemplateAction(
-                                        label='建築任務',
-                                        text='建築任務'
-                                    ),
-                                    MessageTemplateAction(
-                                        label='生活任務',
-                                        text='生活任務'
-                                    )
-                                ]
-                            )
+            message = TemplateSendMessage(
+                alt_text='請選擇視角',
+                template=ConfirmTemplate(
+                    text="選擇以日向（男主角）或小光（女主角）的視角進行遊戲。",
+                    actions=[
+                        PostbackTemplateAction(
+                            label="日向",
+                            data="以日向的視角進行遊戲"
+                        ),
+                        PostbackTemplateAction(
+                            label="小光",
+                            data="以小光的視角進行遊戲"
                         )
-                    )
-    '''
-    
+                    ]
+                )
+            )
+            line_bot_api.reply_message(event.reply_token,message)
+    #施工中
+    elif event.message.text=="以日向的視角進行遊戲":
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="。"))
+    elif event.message.text=="以小光的視角進行遊戲":
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="。"))
+    #文字施工中
     elif event.message.text=="遊戲規則":
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text="發生在輔大資管系某一屆普通卻又不普通的故事，透過回答問題一步步解鎖劇情。"+"\n"+"問題分成三類：生活、建築、課程，回答課程類問題可以增加學分升級喔。"))
     
@@ -159,15 +151,24 @@ def handle_message(event):
             #玩家名稱
             user_id = event.source.user_id         
             profile = line_bot_api.get_profile(user_id)
-            #從exccel取學分，施工中
+            #從exccel取學分
             x=len(userid_list)
             list=[]
             for i in range(x):
                 if userid_list[i]==event.source.user_id:
                     j=i+1
             list.append('B'+str(j))
-            #施工中
-            line_bot_api.reply_message(event.reply_token, TextSendMessage(text="【輔仁大學學生證】"+"\n"+"姓名："+profile.display_name+"\n"+"目前學分數："+worksheet.acell(list[0]).value+"\n"+"還需很多學分升上二年級"))
+            list.append('C'+str(j))
+            #升級所需學分施工中
+            #還沒選擇視角
+            if worksheet.acell(list[1]).value==0:
+                line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒選擇視角喔，請輸入「以日向的視角進行遊戲」或「以小光的視角進行遊戲」。"))
+            #日向視角
+            elif worksheet.acell(list[1]).value==1:
+                line_bot_api.reply_message(event.reply_token, TextSendMessage(text="【輔仁大學學生證】"+"\n"+"姓名：日向"+"\n"+"目前學分數："+worksheet.acell(list[0]).value+"\n"+"還需很多學分升上二年級"))
+            #小光視角
+            else:
+                line_bot_api.reply_message(event.reply_token, TextSendMessage(text="【輔仁大學學生證】"+"\n"+"姓名：小光"+"\n"+"目前學分數："+worksheet.acell(list[0]).value+"\n"+"還需很多學分升上二年級"))   
         else:
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒開始遊戲喔，請輸入「開始遊戲」建立個人檔案。"))
 
