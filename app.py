@@ -113,7 +113,7 @@ def handle_message(event):
             elif worksheet.acell(list[0]).value=="1":
                 line_bot_api.reply_message(event.reply_token,TextSendMessage(text="已經選擇日向視角。"))
             else:
-                line_bot_api.reply_message(event.reply_token,TextSendMessage(text="已經選日向視角，要重置請輸入「重置遊戲」。"))
+                line_bot_api.reply_message(event.reply_token,TextSendMessage(text="已經選小光視角，要重置請輸入「重置遊戲」。"))
         #ID未寫入
         else:
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒建立個人檔案喔，輸入「開始遊戲」建立。"))
@@ -135,7 +135,7 @@ def handle_message(event):
             elif worksheet.acell(list[0]).value=="2":
                 line_bot_api.reply_message(event.reply_token,TextSendMessage(text="已經選小光視角。"))
             else:
-                line_bot_api.reply_message(event.reply_token,TextSendMessage(text="已經選小光視角，要重置請輸入「重置遊戲」。"))
+                line_bot_api.reply_message(event.reply_token,TextSendMessage(text="已經選日向視角，要重置請輸入「重置遊戲」。"))
         #ID未寫入
         else:
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒建立個人檔案喔，輸入「開始遊戲」建立。"))
