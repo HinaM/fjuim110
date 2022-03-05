@@ -150,7 +150,7 @@ def handle_message(event):
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://dic.nicovideo.jp/oekaki/725601.png',
+                        thumbnail_image_url='https://upload.cc/i1/2022/02/19/HQNW3b.png',
                         title='日向',
                         text='男主角',
                         actions=[
@@ -161,7 +161,7 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://img.komicolle.org/2019-04/15566418114917.jpg',
+                        thumbnail_image_url='https://upload.cc/i1/2022/02/27/fW57qF.png',
                         title='小光',
                         text='女主角',
                         actions=[
@@ -172,7 +172,7 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://5.share.photo.xuite.net/davidyea2006/15c7ae8/19334735/1060636313_x.jpg',
+                        thumbnail_image_url='https://upload.cc/i1/2022/03/03/8rgJCv.png',
                         title='司',
                         text='男主朋友',
                         actions=[
@@ -183,7 +183,7 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://ygodl.com/wp-content/uploads/2021/09/5_Moment.jpg',
+                        thumbnail_image_url='https://upload.cc/i1/2022/03/03/UvGMpX.png',
                         title='羽山',
                         text='學霸',
                         actions=[
@@ -286,7 +286,7 @@ def handle_message(event):
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒建立開始遊戲喔，請輸入「開始遊戲」建立個人檔案。"))
 
     else:    
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="答錯了，想想看喔"))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="輸入錯誤"))
 
 
 import os
