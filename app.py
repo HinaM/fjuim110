@@ -108,7 +108,7 @@ def handle_message(event):
             #ID已寫入且未選擇視角
             if worksheet.acell(list[0]).value=="0":
                 worksheet.update(list[0],int(1))
-                line_bot_api.reply_message(event.reply_token,TextSendMessage(text="選擇了日向視角，選擇遊戲任務開始遊戲吧！"))
+                line_bot_api.reply_message(event.reply_token,TextSendMessage(text="選擇了日向視角！"))
             #ID已寫入建立且視角!=0
             elif worksheet.acell(list[0]).value=="1":
                 line_bot_api.reply_message(event.reply_token,TextSendMessage(text="已經選擇日向視角。"))
@@ -130,7 +130,7 @@ def handle_message(event):
             #ID已寫入且已選擇視角
             if worksheet.acell(list[0]).value=="0":
                 worksheet.update(list[0],int(2))
-                line_bot_api.reply_message(event.reply_token,TextSendMessage(text="選擇了小光視角，選擇遊戲任務開始遊戲吧！"))
+                line_bot_api.reply_message(event.reply_token,TextSendMessage(text="選擇了小光視角！"))
             #個人檔案已建立且視角!=0
             elif worksheet.acell(list[0]).value=="2":
                 line_bot_api.reply_message(event.reply_token,TextSendMessage(text="已經選小光視角。"))
