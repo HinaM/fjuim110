@@ -150,7 +150,7 @@ def handle_message(event):
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://upload.cc/i1/2022/02/19/HQNW3b.png',
+                        thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
                         title='日向',
                         text='男主角',
                         actions=[
@@ -161,7 +161,7 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://upload.cc/i1/2022/02/27/fW57qF.png',
+                        thumbnail_image_url='https://upload.cc/i1/2022/03/06/LEFq8S.png',
                         title='小光',
                         text='女主角',
                         actions=[
