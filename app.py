@@ -384,35 +384,53 @@ def handle_message(event):
                 ]
             )
         )
-        carousel_template_message2 = TemplateSendMessage(
-            alt_text='遊戲地圖',
-            template=CarouselTemplate(
-                columns=[
-                    CarouselColumn(
-                        thumbnail_image_url='http://www.management.fju.edu.tw/smarteditupfiles/lm1.jpg',
-                        title='利瑪竇大樓',
-                        text='成功解鎖利瑪竇大樓！',
-                        actions=[
-                            MessageAction(
-                                label='建築介紹',
-                                text='利瑪竇大樓介紹'
-                            )
-                        ]
+        carousel_template_message = TemplateSendMessage(
+    alt_text='Carousel template',
+    template=CarouselTemplate(
+        columns=[
+            CarouselColumn(
+                thumbnail_image_url='https://example.com/item1.jpg',
+                title='this is menu1',
+                text='description1',
+                actions=[
+                    PostbackAction(
+                        label='postback1',
+                        display_text='postback text1',
+                        data='action=buy&itemid=1'
                     ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://www.fju.edu.tw/showImg/focus/focus1435.jpg',
-                        title='中美堂',
-                        text='成功解鎖中美堂！',
-                        actions=[
-                            MessageAction(
-                                label='建築介紹',
-                                text='中美堂介紹'
-                            )
-                        ]
+                    MessageAction(
+                        label='message1',
+                        text='message text1'
+                    ),
+                    URIAction(
+                        label='uri1',
+                        uri='http://example.com/1'
+                    )
+                ]
+            ),
+            CarouselColumn(
+                thumbnail_image_url='https://example.com/item2.jpg',
+                title='this is menu2',
+                text='description2',
+                actions=[
+                    PostbackAction(
+                        label='postback2',
+                        display_text='postback text2',
+                        data='action=buy&itemid=2'
+                    ),
+                    MessageAction(
+                        label='message2',
+                        text='message text2'
+                    ),
+                    URIAction(
+                        label='uri2',
+                        uri='http://example.com/2'
                     )
                 ]
             )
-        )
+        ]
+    )
+)
         #施工中
         userid_list=worksheet.col_values(1)
         if event.source.user_id in userid_list:
