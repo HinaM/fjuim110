@@ -422,6 +422,7 @@ def handle_message(event):
             )
         )
         #施工中
+        userid_list=worksheet.col_values(1)
         if event.source.user_id in userid_list:
             for i in range(len(userid_list)):
                 if userid_list[i]==event.source.user_id:
