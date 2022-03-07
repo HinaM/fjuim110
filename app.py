@@ -365,7 +365,53 @@ def handle_message(event):
                         ]
                     )
         '''
-        
+        image_carousel_template_message = TemplateSendMessage(
+            alt_text='ImageCarousel template',
+            template=ImageCarouselTemplate(
+                columns=[
+                    ImageCarouselColumn(
+                        image_url='https://example.com/item1.jpg',
+                        action=PostbackAction(
+                            label='postback1',
+                            display_text='postback text1',
+                            data='action=buy&itemid=1'
+                        )
+                    ),
+                    ImageCarouselColumn(
+                        image_url='https://example.com/item2.jpg',
+                        action=PostbackAction(
+                            label='postback2',
+                            display_text='postback text2',
+                            data='action=buy&itemid=2'
+                        )
+                    ),
+                    ImageCarouselColumn(
+                        image_url='https://example.com/item2.jpg',
+                        action=PostbackAction(
+                            label='postback2',
+                            display_text='postback text2',
+                            data='action=buy&itemid=2'
+                        )
+                    ),
+                    ImageCarouselColumn(
+                        image_url='https://example.com/item2.jpg',
+                        action=PostbackAction(
+                            label='postback2',
+                            display_text='postback text2',
+                            data='action=buy&itemid=2'
+                        )
+                    ),
+                    ImageCarouselColumn(
+                        image_url='https://example.com/item2.jpg',
+                        action=PostbackAction(
+                            label='postback2',
+                            display_text='postback text2',
+                            data='action=buy&itemid=2'
+                        )
+                    )
+                ]
+            )
+        )
         carousel_template_message = TemplateSendMessage(
             alt_text='遊戲地圖',
             template=CarouselTemplate(
@@ -424,7 +470,7 @@ def handle_message(event):
             if worksheet.acell(list[0]).value=="0":
                 line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒解鎖任何建築！趕快去回答問題解鎖吧！"))
             elif worksheet.acell(list[0]).value=="1":
-                line_bot_api.reply_message(event.reply_token,carousel_template_message)
+                line_bot_api.reply_message(event.reply_token,image_carousel_template_message)
             else:
                 line_bot_api.reply_message(event.reply_token,carousel_template_message2)
         else:
