@@ -210,8 +210,8 @@ def handle_message(event):
         userid_list=worksheet.col_values(1)
         if event.source.user_id in userid_list:
             #玩家名稱
-            user_id = event.source.user_id         
-            profile = line_bot_api.get_profile(user_id)
+            user_id = event.source.user_id
+            profile = line_bot_api.get_profile(user_id)         
             #從exccel取學分
             x=len(userid_list)
             list=[]
@@ -250,10 +250,10 @@ def handle_message(event):
                 line_bot_api.reply_message(event.reply_token,confirm_template_message)
             #日向視角
             elif worksheet.acell(list[2]).value=="1":
-                line_bot_api.reply_message(event.reply_token, TextSendMessage(text="玩家選擇視角：日向"+"\n"+"目前關卡：#"+ques+"\n"+"解鎖物件數："+worksheet.acell(list[1]).value))
+                line_bot_api.reply_message(event.reply_token, TextSendMessage(text="玩家選擇視角：日向"+"\n"+"目前關卡：#"+"\n"+"解鎖物件數："+worksheet.acell(list[1]).value))
             #小光視角
             else:
-                line_bot_api.reply_message(event.reply_token, TextSendMessage(text="玩家選擇視角：小光"+"\n"+"目前關卡：#"+ques+"\n"+"解鎖物件數："+worksheet.acell(list[1]).value))   
+                line_bot_api.reply_message(event.reply_token, TextSendMessage(text="玩家選擇視角：小光"+"\n"+"目前關卡：#"+"\n"+"解鎖物件數："+worksheet.acell(list[1]).value))   
         else:
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒開始遊戲喔，請輸入「開始遊戲」建立個人檔案。"))
 
