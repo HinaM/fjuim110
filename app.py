@@ -367,17 +367,17 @@ def handle_message(event):
         '''
         
         carousel_template_message = TemplateSendMessage(
-            alt_text='Carousel template',
+            alt_text='遊戲地圖',
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://example.com/item1.jpg',
-                        title='this is menu1',
-                        text='description1',
+                        thumbnail_image_url='https://photox.pchome.com.tw/s13/moni101/112/135200602386/',
+                        title='利瑪竇大樓',
+                        text='成功解鎖利瑪竇大樓！',
                         actions=[
                             MessageAction(
-                                label='message1',
-                                text='message text1'
+                                label='建築介紹',
+                                text='利瑪竇大樓介紹'
                             )
                         ]
                     )
