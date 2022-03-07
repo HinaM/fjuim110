@@ -79,7 +79,7 @@ def handle_message(event):
 
     elif event.message.text=="選擇視角":
         confirm_template_message = TemplateSendMessage(
-                alt_text='請選擇視角',
+                alt_text='選擇視角',
                 template=ConfirmTemplate(
                     text='選擇以日向（男主角）或是小光（女主角）的視角遊玩。',
                     actions=[
@@ -146,14 +146,13 @@ def handle_message(event):
     
     elif event.message.text=="人物介紹":
         carousel_template_message = TemplateSendMessage(
-            alt_text='Carousel template',
+            alt_text='人物介紹',
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
                         thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
                         title='日向',
                         text='男主角',
-                        style='primary',
                         actions=[
                             MessageAction(
                                 label='角色資料',
@@ -285,7 +284,126 @@ def handle_message(event):
         #未寫入ID
         else:
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒建立開始遊戲喔，請輸入「開始遊戲」建立個人檔案。"))
-
+    elif event.message.text=="遊戲地圖":
+        #圖片施工中
+        LM=CarouselColumn(
+                        thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
+                        title='利瑪竇大樓',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='利瑪竇大樓介紹'
+                            )
+                        ]
+                    )
+        ZM=CarouselColumn(
+                        thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
+                        title='中美堂',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='中美堂介紹'
+                            )
+                        ]
+                    )
+        SF=CarouselColumn(
+                        thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
+                        title='聖言樓',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='聖言樓介紹'
+                            )
+                        ]
+                    )
+        JZ=CarouselColumn(
+                        thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
+                        title='靜心堂',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='靜心堂介紹'
+                            )
+                        ]
+                    )
+        YS=CarouselColumn(
+                        thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
+                        title='野聲樓',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='野聲樓介紹'
+                            )
+                        ]
+                    )
+        JS=CarouselColumn(
+                        thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
+                        title='濟時樓',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='濟時樓介紹'
+                            )
+                        ]
+                    )
+        BS=CarouselColumn(
+                        thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
+                        title='伯達樓',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='伯達樓介紹'
+                            )
+                        ]
+                    )
+        ES=CarouselColumn(
+                        thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
+                        title='進修部',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='進修部介紹'
+                            )
+                        ]
+                    )
+        carousel_template_message1 = TemplateSendMessage(
+            alt_text='遊戲地圖',
+            template=CarouselTemplate(
+                columns=[LM
+                ]
+            )
+        )
+        #施工中
+        if event.source.user_id in userid_list:
+            for i in range(len(userid_list)):
+                if userid_list[i]==event.source.user_id:
+                    j=i+1
+            list=[]
+            list.append('B'+str(j))
+            if list[0]=="0":
+                line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒解鎖任何建築！趕快去回答問題解鎖吧！"))
+            elif list[0]=="1":
+                line_bot_api.reply_message(event.reply_token,carousel_template_message1)
+            else:
+                line_bot_api.reply_message(event.reply_token,TextSendMessage(text="測試中"))
+        else:
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒建立個人檔案喔，輸入「開始遊戲」建立。"))
+    elif event.message.text=="利瑪竇大樓介紹":
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="利瑪竇大樓為法管學院綜合大樓，呈現「T」字形，於1986年落成，為紀念來華傳教的耶穌會會是利瑪竇神父，特意以其姓名命名，在利瑪竇大樓的前庭、後廳大理石地板，還鑲嵌著輔仁校訓「真善美聖」的拉丁文。利瑪竇為天主教在中國傳教的開拓者之一，除了傳播天主教福音之外，他還結交許多中國官員，教導天文、數學、地理等西方科學知識，因而獲得「泰西儒士」的尊稱。《坤輿萬國全圖》則是利瑪竇為中國所製作的世界地圖，問世後不久即被傳入日本，對於亞洲地理學的發展產生重要影響。"))
+    elif event.message.text=="中美堂介紹":
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="中美堂是學校體育館，屬於大型活動的集會場所，由聖言會會士、德國人林慎白總建築師，及我國專家陳濯、李實鐸、沈大魁、趙楓等四位合作規劃而成，象徵古羅馬競技精神的圓形建築，遠看狀似北平天壇，取前總統蔣中正以及前董事長蔣宋美齡名字各一字，簡稱中美堂。"))
+    elif event.message.text=="聖言樓介紹":
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="代號SF，主要科系為電子系與資工系，而資管系的資料結構、網路設計課程安排在此棟建築物授課。地下室具有敦煌書局，內部除了各大科系的教科書、文具以外，還具備蘋果專區和餐廳，相當便利。"))
+    elif event.message.text=="靜心堂介紹":
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="淨心堂位於外語學院跟法管學院之間，圓環的旁邊喔。於民國66年落成，整體外觀為白色，乃前任校長羅光總主教選定的顏色，代表純潔肅穆莊嚴。在建築風格上非常特別，結合了科學、藝術、宗教等等，可以在外觀上找到字母Α和字母Ω。"))
+    elif event.message.text=="野聲樓介紹":
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="野聲樓為輔大的行政中心，所有行政辦公室都設置在此處，包含校長室秘書室、人事室、會計室、會議室、註冊組、教務處、課務組、軍訓室、公共事務室、生活輔導組、出納組，谷欣廳⋯⋯等等；此外，在野聲樓四樓設有中國天主教文物館、校史館、于斌樞機紀念館，可供民眾預約參觀，以便更了解輔仁大學的歷史背景。「野聲」取自輔大第一任校長于斌樞機主教的字號，源於聖經中聖洗者若翰曠「野」的呼「聲」，有趣的是，在野聲樓外頭也豎立著于斌樞機主教的雕像，和野聲樓相映對照，透過此空間規劃間接說明輔大創建的校史。"))
+    elif event.message.text=="濟時樓介紹":
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="濟時樓圖書總館館舍總面積約3500坪，閱覽席位1062席、全館無線網路(SSID FJU)、學習共享空間與檢索查詢之電腦設備92組、研究小間28間、團體討論室7間。二樓為圖書館入口、借閱櫃台、參考服務區、資訊檢索區、指定參考書區、新書展示區、學習共享空間、寫作中心及閱報區；三樓為現期期刊區、學位論文區及參考書區；四樓為期刊室（含合訂本報紙）；五至七樓為中西文書庫；八樓為辦公室。"))
+    elif event.message.text=="伯達樓介紹":
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="代號BS，所屬科系為社會科學系、法律學系，資管系的資料庫管理和作業系統課程也在此授課。建築意義：愛護真理、保護青年的張伯達神父（1905-1951致命殉道），他常說：現代青年該具有團結、合作、謙虛、仁恕、急公、好義等社會道德，還要有創造力。這樣，一旦跨出校門，不但能夠適應社會，在社會中生存，更能領導社會，改造社會，做社會中堅份子。"))
+    elif event.message.text=="進修部介紹":
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="輔大進修部的前身是輔大夜間部，自民國五十八年成立迄今已五十餘年。秉持天主教的辦學理念與宗旨，以全人教育為目標；秉持真、善、美、聖的校訓，提供一個終生學習的環境，為社會國家造就許多人才。"+"\n"+"本部下轄8個學系及10個學士學位學程，致力培養學生具備廣博的知識及精進的專業能力，並培育學生具有人文素養、人本情懷、人際溝通與思惟判斷能力之完備的社會人。"))
     else:    
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text="輸入錯誤"))
 
