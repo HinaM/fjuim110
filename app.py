@@ -287,7 +287,7 @@ def handle_message(event):
     elif event.message.text=="遊戲地圖":
         #圖片施工中
         LM=CarouselColumn(
-                        thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
+                        thumbnail_image_url='http://www.management.fju.edu.tw/smarteditupfiles/lm1.jpg',
                         title='利瑪竇大樓',
                         actions=[
                             MessageAction(
