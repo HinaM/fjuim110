@@ -289,6 +289,7 @@ def handle_message(event):
         LM=CarouselColumn(
                         thumbnail_image_url='http://www.management.fju.edu.tw/smarteditupfiles/lm1.jpg',
                         title='利瑪竇大樓',
+                        text='成功解鎖利瑪竇大樓！',
                         actions=[
                             MessageAction(
                                 label='建築介紹',
@@ -299,6 +300,7 @@ def handle_message(event):
         ZM=CarouselColumn(
                         thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
                         title='中美堂',
+                        text='成功解鎖中美堂！',
                         actions=[
                             MessageAction(
                                 label='建築介紹',
@@ -309,6 +311,7 @@ def handle_message(event):
         SF=CarouselColumn(
                         thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
                         title='聖言樓',
+                        text='成功解鎖聖言樓！',
                         actions=[
                             MessageAction(
                                 label='建築介紹',
@@ -319,6 +322,7 @@ def handle_message(event):
         JZ=CarouselColumn(
                         thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
                         title='靜心堂',
+                        text='成功解鎖靜心堂！',
                         actions=[
                             MessageAction(
                                 label='建築介紹',
@@ -329,6 +333,7 @@ def handle_message(event):
         YS=CarouselColumn(
                         thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
                         title='野聲樓',
+                        text='成功解鎖野聲樓！',
                         actions=[
                             MessageAction(
                                 label='建築介紹',
@@ -339,6 +344,7 @@ def handle_message(event):
         JS=CarouselColumn(
                         thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
                         title='濟時樓',
+                        text='成功解鎖濟時樓！',
                         actions=[
                             MessageAction(
                                 label='建築介紹',
@@ -349,6 +355,7 @@ def handle_message(event):
         BS=CarouselColumn(
                         thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
                         title='伯達樓',
+                        text='成功解鎖伯達樓！',
                         actions=[
                             MessageAction(
                                 label='建築介紹',
@@ -358,28 +365,19 @@ def handle_message(event):
                     )
         ES=CarouselColumn(
                         thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
-                        title='進修部',
+                        title='進修部大樓',
+                        text='成功解鎖進修部大樓！',
                         actions=[
                             MessageAction(
                                 label='建築介紹',
-                                text='進修部介紹'
+                                text='進修部大樓介紹'
                             )
                         ]
                     )
         carousel_template_message1 = TemplateSendMessage(
             alt_text='遊戲地圖',
             template=CarouselTemplate(
-                columns=[
-                    CarouselColumn(
-                        thumbnail_image_url='http://www.management.fju.edu.tw/smarteditupfiles/lm1.jpg',
-                        title='利瑪竇大樓',
-                        actions=[
-                            MessageAction(
-                                label='建築介紹',
-                                text='利瑪竇大樓介紹'
-                            )
-                        ]
-                    )
+                columns=[LM
                 ]
             )
         )
@@ -390,9 +388,9 @@ def handle_message(event):
                     j=i+1
             list=[]
             list.append('B'+str(j))
-            if list[0]=="0":
+            if worksheet.acell(list[0]).value=="0":
                 line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒解鎖任何建築！趕快去回答問題解鎖吧！"))
-            elif list[0]=="1":
+            elif worksheet.acell(list[0]).value=="1":
                 line_bot_api.reply_message(event.reply_token,carousel_template_message1)
             else:
                 line_bot_api.reply_message(event.reply_token,TextSendMessage(text="測試中"))
@@ -412,7 +410,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text="濟時樓圖書總館館舍總面積約3500坪，閱覽席位1062席、全館無線網路(SSID FJU)、學習共享空間與檢索查詢之電腦設備92組、研究小間28間、團體討論室7間。二樓為圖書館入口、借閱櫃台、參考服務區、資訊檢索區、指定參考書區、新書展示區、學習共享空間、寫作中心及閱報區；三樓為現期期刊區、學位論文區及參考書區；四樓為期刊室（含合訂本報紙）；五至七樓為中西文書庫；八樓為辦公室。"))
     elif event.message.text=="伯達樓介紹":
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text="代號BS，所屬科系為社會科學系、法律學系，資管系的資料庫管理和作業系統課程也在此授課。建築意義：愛護真理、保護青年的張伯達神父（1905-1951致命殉道），他常說：現代青年該具有團結、合作、謙虛、仁恕、急公、好義等社會道德，還要有創造力。這樣，一旦跨出校門，不但能夠適應社會，在社會中生存，更能領導社會，改造社會，做社會中堅份子。"))
-    elif event.message.text=="進修部介紹":
+    elif event.message.text=="進修部大樓介紹":
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text="輔大進修部的前身是輔大夜間部，自民國五十八年成立迄今已五十餘年。秉持天主教的辦學理念與宗旨，以全人教育為目標；秉持真、善、美、聖的校訓，提供一個終生學習的環境，為社會國家造就許多人才。"+"\n"+"本部下轄8個學系及10個學士學位學程，致力培養學生具備廣博的知識及精進的專業能力，並培育學生具有人文素養、人本情懷、人際溝通與思惟判斷能力之完備的社會人。"))
     else:    
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text="輸入錯誤"))

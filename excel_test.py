@@ -10,8 +10,10 @@ print(res)
 userid_list=worksheet.col_values(1)
 print(userid_list)
 
-print(type(worksheet.acell('C2').value))
-if worksheet.acell('C2').value=="1":
-    print("yes")
-else:
-    print("no")
+if "Ud184a816c79cdc37caaf18bc97051cec" in userid_list:
+    for i in range(len(userid_list)):
+        if userid_list[i]=="Ud184a816c79cdc37caaf18bc97051cec":
+            j=i+1
+    list=[]
+    list.append('B'+str(j))
+print(worksheet.acell(list[0]).value=="0")
