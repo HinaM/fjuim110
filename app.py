@@ -250,10 +250,10 @@ def handle_message(event):
                 line_bot_api.reply_message(event.reply_token,confirm_template_message)
             #日向視角
             elif worksheet.acell(list[2]).value=="1":
-                line_bot_api.reply_message(event.reply_token, TextSendMessage(text="玩家選擇視角：日向"+"\n"+"目前關卡：#"+"\n"+"解鎖物件數："+worksheet.acell(list[1]).value))
+                line_bot_api.reply_message(event.reply_token, TextSendMessage(text="玩家選擇視角：日向"+"\n"+"目前關卡：#"+ques+"\n"+"解鎖物件數："+worksheet.acell(list[1]).value))
             #小光視角
             else:
-                line_bot_api.reply_message(event.reply_token, TextSendMessage(text="玩家選擇視角：小光"+"\n"+"目前關卡：#"+"\n"+"解鎖物件數："+worksheet.acell(list[1]).value))   
+                line_bot_api.reply_message(event.reply_token, TextSendMessage(text="玩家選擇視角：小光"+"\n"+"目前關卡：#"+ques+"\n"+"解鎖物件數："+worksheet.acell(list[1]).value))   
         else:
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒開始遊戲喔，請輸入「開始遊戲」建立個人檔案。"))
 
