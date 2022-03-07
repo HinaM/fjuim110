@@ -377,7 +377,47 @@ def handle_message(event):
         carousel_template_message1 = TemplateSendMessage(
             alt_text='遊戲地圖',
             template=CarouselTemplate(
-                columns=[LM
+                columns=[
+                    CarouselColumn(
+                        thumbnail_image_url='http://www.management.fju.edu.tw/smarteditupfiles/lm1.jpg',
+                        title='利瑪竇大樓',
+                        text='成功解鎖利瑪竇大樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='利瑪竇大樓介紹'
+                            )
+                        ]
+                    )
+                ]
+            )
+        )
+        carousel_template_message2 = TemplateSendMessage(
+            alt_text='遊戲地圖',
+            template=CarouselTemplate(
+                columns=[
+                    CarouselColumn(
+                        thumbnail_image_url='http://www.management.fju.edu.tw/smarteditupfiles/lm1.jpg',
+                        title='利瑪竇大樓',
+                        text='成功解鎖利瑪竇大樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='利瑪竇大樓介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://www.fju.edu.tw/showImg/focus/focus1435.jpg',
+                        title='中美堂',
+                        text='成功解鎖中美堂！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='中美堂介紹'
+                            )
+                        ]
+                    )
                 ]
             )
         )
@@ -393,7 +433,7 @@ def handle_message(event):
             elif worksheet.acell(list[0]).value=="1":
                 line_bot_api.reply_message(event.reply_token,carousel_template_message1)
             else:
-                line_bot_api.reply_message(event.reply_token,TextSendMessage(text="測試中"))
+                line_bot_api.reply_message(event.reply_token,carousel_template_message2)
         else:
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒建立個人檔案喔，輸入「開始遊戲」建立。"))
     elif event.message.text=="利瑪竇大樓介紹":
