@@ -412,6 +412,53 @@ def handle_message(event):
                 ]
             )
         )
+        carousel_template_message = TemplateSendMessage(
+            alt_text='Carousel template',
+            template=CarouselTemplate(
+                columns=[
+                    CarouselColumn(
+                        thumbnail_image_url='https://example.com/item1.jpg',
+                        title='this is menu1',
+                        text='description1',
+                        actions=[
+                            PostbackAction(
+                                label='postback1',
+                                display_text='postback text1',
+                                data='action=buy&itemid=1'
+                            ),
+                            MessageAction(
+                                label='message1',
+                                text='message text1'
+                            ),
+                            URIAction(
+                                label='uri1',
+                                uri='http://example.com/1'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://example.com/item2.jpg',
+                        title='this is menu2',
+                        text='description2',
+                        actions=[
+                            PostbackAction(
+                                label='postback2',
+                                display_text='postback text2',
+                                data='action=buy&itemid=2'
+                            ),
+                            MessageAction(
+                                label='message2',
+                                text='message text2'
+                            ),
+                            URIAction(
+                                label='uri2',
+                                uri='http://example.com/2'
+                            )
+                        ]
+                    )
+                ]
+            )
+        )
         #施工中
         userid_list=worksheet.col_values(1)
         if event.source.user_id in userid_list:
@@ -423,7 +470,7 @@ def handle_message(event):
             if worksheet.acell(list[0]).value=="0":
                 line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒解鎖任何建築！趕快去回答問題解鎖吧！"))
             elif worksheet.acell(list[0]).value=="1":
-                line_bot_api.reply_message(event.reply_token,carousel_template_message1)
+                line_bot_api.reply_message(event.reply_token,carousel_template_message)
             else:
                 line_bot_api.reply_message(event.reply_token,carousel_template_message2)
         else:

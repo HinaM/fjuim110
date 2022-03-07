@@ -16,4 +16,4 @@ if "Ud184a816c79cdc37caaf18bc97051cec" in userid_list:
             j=i+1
     list=[]
     list.append('B'+str(j))
-print(worksheet.acell(list[0]).value=="0")
+print(worksheet.acell(list[0]).value=="1")
