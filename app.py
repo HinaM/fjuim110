@@ -1,3 +1,4 @@
+from codecs import replace_errors
 from flask import Flask, request, abort
  
 from linebot import (
@@ -421,12 +422,19 @@ def handle_message(event):
                     j=i+1
             list=[]
             list.append('B'+str(j))
+            rep_arr=[]
             if worksheet.acell(list[0]).value=="0":
-                line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒解鎖任何建築！趕快去回答問題解鎖吧！"))
+                rep_arr.append(TextSendMessage("建築物解鎖進度：【0/9】"))
+                rep_arr.append(TextSendMessage(text="還沒解鎖任何建築！趕快去回答問題解鎖吧！"))
+                line_bot_api.reply_message(event.reply_token,rep_arr)
             elif worksheet.acell(list[0]).value=="1":
-                line_bot_api.reply_message(event.reply_token,carousel_template_message)
+                rep_arr.append(TextSendMessage("建築物解鎖進度：【1/9】"))
+                rep_arr.append(carousel_template_message)
+                line_bot_api.reply_message(event.reply_token,rep_arr)
             else:
-                line_bot_api.reply_message(event.reply_token,carousel_template_message2)
+                rep_arr.append(TextSendMessage("建築物解鎖進度：【2/9】"))
+                rep_arr.append(carousel_template_message2)
+                line_bot_api.reply_message(event.reply_token,rep_arr)   
         else:
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒建立個人檔案喔，輸入「開始遊戲」建立。"))
     elif event.message.text=="利瑪竇大樓介紹":
