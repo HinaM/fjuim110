@@ -153,6 +153,7 @@ def handle_message(event):
                         thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
                         title='日向',
                         text='男主角',
+                        style='primary',
                         actions=[
                             MessageAction(
                                 label='角色資料',
