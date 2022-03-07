@@ -46,20 +46,20 @@ def handle_message(event):
     if event.message.text=="開始遊戲":
         userid_list=worksheet.col_values(1)
         if event.source.user_id in userid_list:
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(text="已經開始遊戲，要重新開始請輸入「重置遊戲」"))
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(text="已經開始遊戲，要重新開始請輸入「重置遊戲」。"))
         else:
             userid_list=worksheet.col_values(1)
             x=len(userid_list)
             list=[]
             for i in range(65,76):
                 list.append(chr(i)+str(x+1))
-            #ID
+            #寫入ID
             worksheet.update(list[0],event.source.user_id)
             #題目數量施工中
             #初始值設定
             for i in range(1,len(list)):
                 worksheet.update(list[i],int(0))
-            worksheet.update(list[3],int(1))
+            worksheet.update(list[4],int(1))
             confirm_template_message = TemplateSendMessage(
                 alt_text='請選擇視角',
                 template=ConfirmTemplate(
@@ -105,7 +105,7 @@ def handle_message(event):
                 if userid_list[i]==event.source.user_id:
                     j=i+1
             list=[]
-            list.append('C'+str(j))
+            list.append('D'+str(j))
             #ID已寫入且未選擇視角
             if worksheet.acell(list[0]).value=="0":
                 worksheet.update(list[0],int(1))
@@ -127,7 +127,7 @@ def handle_message(event):
                 if userid_list[i]==event.source.user_id:
                     j=i+1
             list=[]
-            list.append('C'+str(j))
+            list.append('D'+str(j))
             #ID已寫入且已選擇視角
             if worksheet.acell(list[0]).value=="0":
                 worksheet.update(list[0],int(2))
@@ -143,7 +143,7 @@ def handle_message(event):
 
     elif event.message.text=="遊戲規則":
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text="本遊戲是採用回答問題的遊玩方式進行闖關！！"+"\n"+"玩家回答出遊戲內關卡的問題，透過回答問題一步步解鎖劇情✨"+"\n"+"若是問題回答不出來時可以參考下面網站裡的解題技巧喔٩( 'ω' )و "+"\n"+"玩家從個人檔案中觀看目前選擇視角、已解鎖物件，想重新體驗遊戲或選擇不同視角可以輸入「重置遊戲」喔✨"+"\n\n"+"最後祝各位玩家遊玩愉快🥳"))
-    
+    #文字施工中
     elif event.message.text=="人物介紹":
         carousel_template_message = TemplateSendMessage(
             alt_text='人物介紹',
@@ -218,11 +218,19 @@ def handle_message(event):
             for i in range(x):
                 if userid_list[i]==event.source.user_id:
                     j=i+1
+            #建築、物件、視角
             list.append('B'+str(j))
             list.append('C'+str(j))
-            #升級所需學分施工中
+            list.append('D'+str(j))
+            #找關卡代號為1
+            list_c=[]
+            for i in range(69,76):
+                list_c.append(chr(i)+str(j))
+            for i in range(len(list_c)):
+                if worksheet.acell(list_c[i]).value=="1":
+                    ques=ord(list_c[i][0])-68
             #還沒選擇視角
-            if worksheet.acell(list[1]).value=="0":
+            if worksheet.acell(list[2]).value=="0":
                 confirm_template_message = TemplateSendMessage(
                     alt_text='請選擇視角',
                     template=ConfirmTemplate(
@@ -241,11 +249,11 @@ def handle_message(event):
                 )
                 line_bot_api.reply_message(event.reply_token,confirm_template_message)
             #日向視角
-            elif worksheet.acell(list[1]).value=="1":
-                line_bot_api.reply_message(event.reply_token, TextSendMessage(text="【輔仁大學學生證】"+"\n"+"姓名：日向"+"\n"+"目前學分數："+worksheet.acell(list[0]).value+"\n"+"還需很多學分升上二年級"))
+            elif worksheet.acell(list[2]).value=="1":
+                line_bot_api.reply_message(event.reply_token, TextSendMessage(text="玩家選擇視角：日向"+"\n"+"目前關卡：#"+ques+"\n"+"解鎖物件數："+worksheet.acell(list[1]).value))
             #小光視角
             else:
-                line_bot_api.reply_message(event.reply_token, TextSendMessage(text="【輔仁大學學生證】"+"\n"+"姓名：小光"+"\n"+"目前學分數："+worksheet.acell(list[0]).value+"\n"+"還需很多學分升上二年級"))   
+                line_bot_api.reply_message(event.reply_token, TextSendMessage(text="玩家選擇視角：小光"+"\n"+"目前關卡：#"+ques+"\n"+"解鎖物件數："+worksheet.acell(list[1]).value))   
         else:
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒開始遊戲喔，請輸入「開始遊戲」建立個人檔案。"))
 
@@ -263,7 +271,7 @@ def handle_message(event):
             #初始值設定
             for i in range(0,len(list)):
                 worksheet.update(list[i],int(0))
-            worksheet.update(list[2],int(1))
+            worksheet.update(list[3],int(1))
             confirm_template_message = TemplateSendMessage(
                 alt_text='請選擇視角',
                 template=ConfirmTemplate(

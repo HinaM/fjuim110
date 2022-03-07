@@ -9,11 +9,10 @@ print(res)
 
 userid_list=worksheet.col_values(1)
 print(userid_list)
+list_c=[]
+for i in range(69,76):
+    list_c.append(chr(i)+str(2))
 
-if "Ud184a816c79cdc37caaf18bc97051cec" in userid_list:
-    for i in range(len(userid_list)):
-        if userid_list[i]=="Ud184a816c79cdc37caaf18bc97051cec":
-            j=i+1
-    list=[]
-    list.append('B'+str(j))
-print(worksheet.acell(list[0]).value=="1")
+for i in range(len(list_c)):
+    if worksheet.acell(list_c[i]).value=="1":
+        print(ord(list_c[i][0])-69)
