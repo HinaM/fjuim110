@@ -369,7 +369,17 @@ def handle_message(event):
         carousel_template_message1 = TemplateSendMessage(
             alt_text='遊戲地圖',
             template=CarouselTemplate(
-                columns=[LM
+                columns=[
+                    CarouselColumn(
+                        thumbnail_image_url='http://www.management.fju.edu.tw/smarteditupfiles/lm1.jpg',
+                        title='利瑪竇大樓',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='利瑪竇大樓介紹'
+                            )
+                        ]
+                    )
                 ]
             )
         )
