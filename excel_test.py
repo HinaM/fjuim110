@@ -25,6 +25,5 @@ if 'Ud184a816c79cdc37caaf18bc97051cec' in userid_list:
     for i in range(len(list_c)):
         if worksheet.acell(list_c[i]).value=="1":
             ques=ord(list_c[i][0])-68
-if 1-1==0:
-    print(ques)
+print(type(ques))
 print(worksheet.acell("C2").value)

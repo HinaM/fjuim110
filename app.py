@@ -228,9 +228,7 @@ def handle_message(event):
                 list_c.append(chr(i)+str(j))
             for i in range(len(list_c)):
                 if worksheet.acell(list_c[i]).value=="1":
-                    ques=ord(list_c[i][0])-68
-            list_q=[]
-            list_q.append(ques)
+                    ques=str(ord(list_c[i][0])-68)
             #還沒選擇視角
             if worksheet.acell(list[2]).value=="0":
                 confirm_template_message = TemplateSendMessage(
@@ -252,10 +250,10 @@ def handle_message(event):
                 line_bot_api.reply_message(event.reply_token,confirm_template_message)
             #日向視角
             elif worksheet.acell(list[2]).value=="1":
-                line_bot_api.reply_message(event.reply_token, TextSendMessage(text="玩家選擇視角：日向"+"\n"+"目前關卡：#"+list_q[0]+"\n"+"解鎖物件數："+worksheet.acell(list[1]).value))
+                line_bot_api.reply_message(event.reply_token, TextSendMessage(text="玩家選擇視角：日向"+"\n"+"目前關卡：#"+ques+"\n"+"解鎖物件數：【"+worksheet.acell(list[1]).value+"/8】"))
             #小光視角
             else:
-                line_bot_api.reply_message(event.reply_token, TextSendMessage(text="玩家選擇視角：小光"+"\n"+"目前關卡：#"+list_q[0]+"\n"+"解鎖物件數："+worksheet.acell(list[1]).value))   
+                line_bot_api.reply_message(event.reply_token, TextSendMessage(text="玩家選擇視角：小光"+"\n"+"目前關卡：#"+ques+"\n"+"解鎖物件數：【"+worksheet.acell(list[1]).value+"/8】"))   
         else:
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒開始遊戲喔，請輸入「開始遊戲」建立個人檔案。"))
 
