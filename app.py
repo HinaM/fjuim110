@@ -293,87 +293,7 @@ def handle_message(event):
         else:
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒建立開始遊戲喔，請輸入「開始遊戲」建立個人檔案。"))
     elif event.message.text=="遊戲地圖":
-        #圖片施工中
-        '''
-        ZM=CarouselColumn(
-                        thumbnail_image_url='https://www.fju.edu.tw/showImg/focus/focus1435.jpg',
-                        title='中美堂',
-                        text='成功解鎖中美堂！',
-                        actions=[
-                            MessageAction(
-                                label='建築介紹',
-                                text='中美堂介紹'
-                            )
-                        ]
-                    )
-        SF=CarouselColumn(
-                        thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
-                        title='聖言樓',
-                        text='成功解鎖聖言樓！',
-                        actions=[
-                            MessageAction(
-                                label='建築介紹',
-                                text='聖言樓介紹'
-                            )
-                        ]
-                    )
-        JZ=CarouselColumn(
-                        thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
-                        title='靜心堂',
-                        text='成功解鎖靜心堂！',
-                        actions=[
-                            MessageAction(
-                                label='建築介紹',
-                                text='靜心堂介紹'
-                            )
-                        ]
-                    )
-        YS=CarouselColumn(
-                        thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
-                        title='野聲樓',
-                        text='成功解鎖野聲樓！',
-                        actions=[
-                            MessageAction(
-                                label='建築介紹',
-                                text='野聲樓介紹'
-                            )
-                        ]
-                    )
-        JS=CarouselColumn(
-                        thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
-                        title='濟時樓',
-                        text='成功解鎖濟時樓！',
-                        actions=[
-                            MessageAction(
-                                label='建築介紹',
-                                text='濟時樓介紹'
-                            )
-                        ]
-                    )
-        BS=CarouselColumn(
-                        thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
-                        title='伯達樓',
-                        text='成功解鎖伯達樓！',
-                        actions=[
-                            MessageAction(
-                                label='建築介紹',
-                                text='伯達樓介紹'
-                            )
-                        ]
-                    )
-        ES=CarouselColumn(
-                        thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
-                        title='進修部大樓',
-                        text='成功解鎖進修部大樓！',
-                        actions=[
-                            MessageAction(
-                                label='建築介紹',
-                                text='進修部大樓介紹'
-                            )
-                        ]
-                    )
-        '''
-        
+        #施工中
         carousel_template_message = TemplateSendMessage(
             alt_text='遊戲地圖',
             template=CarouselTemplate(
@@ -393,9 +313,49 @@ def handle_message(event):
             )
         )
         carousel_template_message2 = TemplateSendMessage(
+            alt_text='遊戲地圖',
+            template=CarouselTemplate(
+                columns=[
+                    CarouselColumn(
+                        thumbnail_image_url='https://photox.pchome.com.tw/s13/moni101/112/135200602386/',
+                        title='利瑪竇大樓',
+                        text='成功解鎖利瑪竇大樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='利瑪竇大樓介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://example.com/item2.jpg',
+                        title='this is menu2',
+                        text='description2',
+                        actions=[
+                            MessageAction(
+                                label='message2',
+                                text='message text2'
+                            )
+                        ]
+                    )
+                ]
+            )
+        )
+        carousel_template_message3 = TemplateSendMessage(
             alt_text='Carousel template',
             template=CarouselTemplate(
                 columns=[
+                    CarouselColumn(
+                        thumbnail_image_url='https://photox.pchome.com.tw/s13/moni101/112/135200602386/',
+                        title='利瑪竇大樓',
+                        text='成功解鎖利瑪竇大樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='利瑪竇大樓介紹'
+                            )
+                        ]
+                    ),
                     CarouselColumn(
                         thumbnail_image_url='https://example.com/item1.jpg',
                         title='this is menu1',
