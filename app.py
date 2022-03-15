@@ -151,12 +151,12 @@ def handle_message(event):
                 columns=[
                     CarouselColumn(
                         thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
-                        title='游日向',
+                        title='游日翔',
                         text='男主角',
                         actions=[
                             MessageAction(
                                 label='角色資料',
-                                text='日向角色資料'
+                                text='日翔角色資料'
                             )
                         ]
                     ),
@@ -208,16 +208,16 @@ def handle_message(event):
             )
         )
         line_bot_api.reply_message(event.reply_token,carousel_template_message)
-    elif event.message.text=="日向角色資料":
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="誤打誤撞考上輔大資管系的普通學生日向，在學間遇到自己的真命天女——曉光，因為成績差而不敢追求。在畢業後收到來自神祕人的「Code/140.136」回到過去，為了不再留下遺憾而發誓認真度過每一天。觀察力十分敏銳，總能注意到一些小細節。"))
+    elif event.message.text=="日翔角色資料":
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="誤打誤撞考上輔大資管系的普通學生日翔，在學間遇到自己的真命天女——曉光，卻因為成績差感到自卑而不敢進一步追求。在畢業後收到來自神祕人的「Code/140.136」回到過去，為了不再留下遺憾而發誓認真度過每一天。觀察力十分敏銳，總能注意到一些小細節。"))
     elif event.message.text=="曉光角色資料":
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text="以全校第一的成績進入輔大資管系，無論何時何地都在讀書。平時都擺著一張撲克臉，讓人難以親近的樣子。不過一看到小動物時，臉上總是洋溢著幸福的笑容。家裡養了一隻叫德魯貝的貓。在畢業後收到來自神祕人的「Code/140.136」，為了改變過去膽小、不敢邁出步伐的自己而回到過去。"))
     elif event.message.text=="司晨角色資料":
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="日向的死黨。和日向一起去打籃球、吃飯、上課，雖然總是冒冒失失的，但一直都把朋友擺在第一位，常常把「兄弟就是要有福同享、有難同當啊」掛在嘴邊。"))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="日翔的死黨。和日翔一起去打籃球、吃飯、上課，雖然總是冒冒失失的，但一直都把朋友擺在第一位，常常把「兄弟就是要有福同享、有難同當啊」掛在嘴邊。"))
     elif event.message.text=="宇恒角色資料":
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="「萬般皆下品，唯有讀書高」是他的人生名言，與小光角逐班上的一二名。羽山也喜歡同為學霸的小光，為了不讓日向靠近小光，常常提出問題刁難日向。"))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="「萬般皆下品，唯有讀書高」是他的人生名言，與曉光角逐班上的一二名。羽山也喜歡同為學霸的曉光，為了不讓日翔靠近曉光，常常提出問題刁難日翔。"))
     elif event.message.text=="真澄角色資料":
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="曉光在通識課程中認識的隔壁班同學，對任何人最初都抱有警戒心，熟識後會發現真誠只是不知如何開口向他人表達關心。對自我要求很高，課程總是排得很滿，因此常常衝堂改修乙班的課。"))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="曉光在通識課程中認識的甲班同學，對任何人最初都抱有警戒心，熟識後會發現真澄只是不知如何開口向他人表達關心。對自我要求很高，課程總是排得很滿，因此常常衝堂改修乙班的課。"))
     
     elif event.message.text=="個人檔案":
         userid_list=worksheet.col_values(1)
