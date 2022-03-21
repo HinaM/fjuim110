@@ -567,7 +567,7 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://upload.cc/i1/2022/03/21/0pecIR.jpg',
+                        thumbnail_image_url='https://i.imgur.com/sqlb3OC.jpeg',
                         title='伯達樓',
                         text='成功解鎖伯達樓！',
                         actions=[
@@ -640,7 +640,7 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://upload.cc/i1/2022/03/21/0pecIR.jpg',
+                        thumbnail_image_url='https://i.imgur.com/sqlb3OC.jpeg',
                         title='伯達樓',
                         text='成功解鎖伯達樓！',
                         actions=[
@@ -724,7 +724,7 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://upload.cc/i1/2022/03/21/0pecIR.jpg',
+                        thumbnail_image_url='https://i.imgur.com/sqlb3OC.jpeg',
                         title='伯達樓',
                         text='成功解鎖伯達樓！',
                         actions=[
