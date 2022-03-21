@@ -746,7 +746,7 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='http://peo.dsa.fju.edu.tw/showImg/menuImg/menuImg6.jpg',
+                        thumbnail_image_url='https://pic.pimg.tw/mutsumi326/1428584966-421871247_n.jpg',
                         title='中美堂',
                         text='成功解鎖中美堂！',
                         actions=[
