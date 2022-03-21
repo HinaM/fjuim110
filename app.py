@@ -507,7 +507,7 @@ def handle_message(event):
                 ]
             )
         )
-        carousel_template_message6 = TemplateSendMessage(
+        carousel_template_message_6 = TemplateSendMessage(
             alt_text='Carousel template',
             template=CarouselTemplate(
                 columns=[
@@ -805,7 +805,7 @@ def handle_message(event):
                 line_bot_api.reply_message(event.reply_token,rep_arr)
             elif worksheet.acell(list[0]).value=="6":
                 rep_arr.append(TextSendMessage("建築物解鎖進度：【6/8】"))
-                rep_arr.append(carousel_template_message6)
+                rep_arr.append(carousel_template_message_6)
                 line_bot_api.reply_message(event.reply_token,rep_arr)
             elif worksheet.acell(list[0]).value=="7":
                 rep_arr.append(TextSendMessage("建築物解鎖進度：【7/8】"))
