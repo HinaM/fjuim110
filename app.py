@@ -809,11 +809,11 @@ def handle_message(event):
                 line_bot_api.reply_message(event.reply_token,rep_arr)
             elif worksheet.acell(list[0]).value=="7":
                 rep_arr.append(TextSendMessage("建築物解鎖進度：【7/8】"))
-                rep_arr.append(carousel_template_message4)
+                rep_arr.append(carousel_template_message7)
                 line_bot_api.reply_message(event.reply_token,rep_arr)
             else:
                 rep_arr.append(TextSendMessage("建築物解鎖進度：【8/8】"))
-                rep_arr.append(carousel_template_message2)
+                rep_arr.append(carousel_template_message8)
                 line_bot_api.reply_message(event.reply_token,rep_arr)   
         else:
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒建立個人檔案喔，輸入「開始遊戲」建立。"))
