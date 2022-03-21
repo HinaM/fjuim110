@@ -651,7 +651,7 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://ppt.cc/fL7tix@.jpg',
+                        thumbnail_image_url='https://ppt.cc/f3IHdx@.jpg',
                         title='濟時樓',
                         text='成功解鎖濟時樓！',
                         actions=[
@@ -735,7 +735,7 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://ppt.cc/fL7tix@.jpg',
+                        thumbnail_image_url='https://ppt.cc/f3IHdx@.jpg',
                         title='濟時樓',
                         text='成功解鎖濟時樓！',
                         actions=[
