@@ -341,13 +341,13 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://example.com/item2.jpg',
-                        title='this is menu2',
-                        text='description2',
+                        thumbnail_image_url='https://pic.pimg.tw/fjumyblog/4a128e07da7c5_wn.jpg',
+                        title='聖言樓',
+                        text='成功解鎖聖言樓！',
                         actions=[
                             MessageAction(
-                                label='message2',
-                                text='message text2'
+                                label='建築介紹',
+                                text='聖言樓介紹'
                             )
                         ]
                     )
@@ -370,24 +370,400 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://example.com/item1.jpg',
-                        title='this is menu1',
-                        text='description1',
+                        thumbnail_image_url='https://pic.pimg.tw/fjumyblog/4a128e07da7c5_wn.jpg',
+                        title='聖言樓',
+                        text='成功解鎖聖言樓！',
                         actions=[
                             MessageAction(
-                                label='message1',
-                                text='message text1'
+                                label='建築介紹',
+                                text='聖言樓介紹'
                             )
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://example.com/item2.jpg',
-                        title='this is menu2',
-                        text='description2',
+                        thumbnail_image_url='https://fastly.4sqi.net/img/general/784x588/43402781_EW7mtusxKDYOM_Og5v3k7sFac_UPy0JeNmwAnTUQWgw.jpg',
+                        title='野聲樓',
+                        text='成功解鎖野聲樓！',
                         actions=[
                             MessageAction(
-                                label='message2',
-                                text='message text2'
+                                label='建築介紹',
+                                text='野聲樓介紹'
+                            )
+                        ]
+                    )
+                ]
+            )
+        )
+        carousel_template_message4 = TemplateSendMessage(
+            alt_text='Carousel template',
+            template=CarouselTemplate(
+                columns=[
+                    CarouselColumn(
+                        thumbnail_image_url='https://photox.pchome.com.tw/s13/moni101/112/135200602386/',
+                        title='利瑪竇大樓',
+                        text='成功解鎖利瑪竇大樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='利瑪竇大樓介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://pic.pimg.tw/fjumyblog/4a128e07da7c5_wn.jpg',
+                        title='聖言樓',
+                        text='成功解鎖聖言樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='聖言樓介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://fastly.4sqi.net/img/general/784x588/43402781_EW7mtusxKDYOM_Og5v3k7sFac_UPy0JeNmwAnTUQWgw.jpg',
+                        title='野聲樓',
+                        text='成功解鎖野聲樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='野聲樓介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/FJU_Religion03.jpg/800px-FJU_Religion03.jpg',
+                        title='淨心堂',
+                        text='成功解鎖淨心堂！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='淨心堂介紹'
+                            )
+                        ]
+                    )
+                ]
+            )
+        )
+        carousel_template_message5 = TemplateSendMessage(
+            alt_text='Carousel template',
+            template=CarouselTemplate(
+                columns=[
+                    CarouselColumn(
+                        thumbnail_image_url='https://photox.pchome.com.tw/s13/moni101/112/135200602386/',
+                        title='利瑪竇大樓',
+                        text='成功解鎖利瑪竇大樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='利瑪竇大樓介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://pic.pimg.tw/fjumyblog/4a128e07da7c5_wn.jpg',
+                        title='聖言樓',
+                        text='成功解鎖聖言樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='聖言樓介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://fastly.4sqi.net/img/general/784x588/43402781_EW7mtusxKDYOM_Og5v3k7sFac_UPy0JeNmwAnTUQWgw.jpg',
+                        title='野聲樓',
+                        text='成功解鎖野聲樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='野聲樓介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/FJU_Religion03.jpg/800px-FJU_Religion03.jpg',
+                        title='淨心堂',
+                        text='成功解鎖淨心堂！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='淨心堂介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://mapio.net/images-p/84019119.jpg',
+                        title='進修部',
+                        text='成功解鎖進修部！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='進修部介紹'
+                            )
+                        ]
+                    )
+                ]
+            )
+        )
+        carousel_template_message6 = TemplateSendMessage(
+            alt_text='Carousel template',
+            template=CarouselTemplate(
+                columns=[
+                    CarouselColumn(
+                        thumbnail_image_url='https://photox.pchome.com.tw/s13/moni101/112/135200602386/',
+                        title='利瑪竇大樓',
+                        text='成功解鎖利瑪竇大樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='利瑪竇大樓介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://pic.pimg.tw/fjumyblog/4a128e07da7c5_wn.jpg',
+                        title='聖言樓',
+                        text='成功解鎖聖言樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='聖言樓介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://fastly.4sqi.net/img/general/784x588/43402781_EW7mtusxKDYOM_Og5v3k7sFac_UPy0JeNmwAnTUQWgw.jpg',
+                        title='野聲樓',
+                        text='成功解鎖野聲樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='野聲樓介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/FJU_Religion03.jpg/800px-FJU_Religion03.jpg',
+                        title='淨心堂',
+                        text='成功解鎖淨心堂！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='淨心堂介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://mapio.net/images-p/84019119.jpg',
+                        title='進修部',
+                        text='成功解鎖進修部！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='進修部介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='http://jmo.mission.fju.edu.tw/showImg/subLabelImg/1_28_798_1.jpg',
+                        title='伯達樓',
+                        text='成功解鎖伯達樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='伯達樓介紹'
+                            )
+                        ]
+                    )
+                ]
+            )
+        )
+        carousel_template_message7 = TemplateSendMessage(
+            alt_text='Carousel template',
+            template=CarouselTemplate(
+                columns=[
+                    CarouselColumn(
+                        thumbnail_image_url='https://photox.pchome.com.tw/s13/moni101/112/135200602386/',
+                        title='利瑪竇大樓',
+                        text='成功解鎖利瑪竇大樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='利瑪竇大樓介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://pic.pimg.tw/fjumyblog/4a128e07da7c5_wn.jpg',
+                        title='聖言樓',
+                        text='成功解鎖聖言樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='聖言樓介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://fastly.4sqi.net/img/general/784x588/43402781_EW7mtusxKDYOM_Og5v3k7sFac_UPy0JeNmwAnTUQWgw.jpg',
+                        title='野聲樓',
+                        text='成功解鎖野聲樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='野聲樓介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/FJU_Religion03.jpg/800px-FJU_Religion03.jpg',
+                        title='淨心堂',
+                        text='成功解鎖淨心堂！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='淨心堂介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://mapio.net/images-p/84019119.jpg',
+                        title='進修部',
+                        text='成功解鎖進修部！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='進修部介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='http://jmo.mission.fju.edu.tw/showImg/subLabelImg/1_28_798_1.jpg',
+                        title='伯達樓',
+                        text='成功解鎖伯達樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='伯達樓介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='http://web.lib.fju.edu.tw/chi/sites/default/files/image/002_0.jpg',
+                        title='濟時樓',
+                        text='成功解鎖濟時樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='濟時樓介紹'
+                            )
+                        ]
+                    )
+                ]
+            )
+        )
+        carousel_template_message8 = TemplateSendMessage(
+            alt_text='Carousel template',
+            template=CarouselTemplate(
+                columns=[
+                    CarouselColumn(
+                        thumbnail_image_url='https://photox.pchome.com.tw/s13/moni101/112/135200602386/',
+                        title='利瑪竇大樓',
+                        text='成功解鎖利瑪竇大樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='利瑪竇大樓介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://pic.pimg.tw/fjumyblog/4a128e07da7c5_wn.jpg',
+                        title='聖言樓',
+                        text='成功解鎖聖言樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='聖言樓介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://fastly.4sqi.net/img/general/784x588/43402781_EW7mtusxKDYOM_Og5v3k7sFac_UPy0JeNmwAnTUQWgw.jpg',
+                        title='野聲樓',
+                        text='成功解鎖野聲樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='野聲樓介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/FJU_Religion03.jpg/800px-FJU_Religion03.jpg',
+                        title='淨心堂',
+                        text='成功解鎖淨心堂！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='淨心堂介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://mapio.net/images-p/84019119.jpg',
+                        title='進修部',
+                        text='成功解鎖進修部！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='進修部介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='http://jmo.mission.fju.edu.tw/showImg/subLabelImg/1_28_798_1.jpg',
+                        title='伯達樓',
+                        text='成功解鎖伯達樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='伯達樓介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='http://web.lib.fju.edu.tw/chi/sites/default/files/image/002_0.jpg',
+                        title='濟時樓',
+                        text='成功解鎖濟時樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='濟時樓介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='http://peo.dsa.fju.edu.tw/showImg/menuImg/menuImg6.jpg',
+                        title='中美堂',
+                        text='成功解鎖中美堂！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='中美堂介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='http://peo.dsa.fju.edu.tw/showImg/menuImg/menuImg6.jpg',
+                        title='中美堂',
+                        text='成功解鎖中美堂！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='中美堂介紹'
                             )
                         ]
                     )
@@ -404,15 +780,39 @@ def handle_message(event):
             list.append('B'+str(j))
             rep_arr=[]
             if worksheet.acell(list[0]).value=="0":
-                rep_arr.append(TextSendMessage("建築物解鎖進度：【0/9】"))
+                rep_arr.append(TextSendMessage("建築物解鎖進度：【0/8】"))
                 rep_arr.append(TextSendMessage(text="還沒解鎖任何建築！趕快去回答問題解鎖吧！"))
                 line_bot_api.reply_message(event.reply_token,rep_arr)
             elif worksheet.acell(list[0]).value=="1":
-                rep_arr.append(TextSendMessage("建築物解鎖進度：【1/9】"))
+                rep_arr.append(TextSendMessage("建築物解鎖進度：【1/8】"))
                 rep_arr.append(carousel_template_message)
                 line_bot_api.reply_message(event.reply_token,rep_arr)
+            elif worksheet.acell(list[0]).value=="2":
+                rep_arr.append(TextSendMessage("建築物解鎖進度：【2/8】"))
+                rep_arr.append(carousel_template_message2)
+                line_bot_api.reply_message(event.reply_token,rep_arr)
+            elif worksheet.acell(list[0]).value=="3":
+                rep_arr.append(TextSendMessage("建築物解鎖進度：【3/8】"))
+                rep_arr.append(carousel_template_message3)
+                line_bot_api.reply_message(event.reply_token,rep_arr)
+            elif worksheet.acell(list[0]).value=="4":
+                rep_arr.append(TextSendMessage("建築物解鎖進度：【4/8】"))
+                rep_arr.append(carousel_template_message4)
+                line_bot_api.reply_message(event.reply_token,rep_arr)
+            elif worksheet.acell(list[0]).value=="5":
+                rep_arr.append(TextSendMessage("建築物解鎖進度：【5/8】"))
+                rep_arr.append(carousel_template_message5)
+                line_bot_api.reply_message(event.reply_token,rep_arr)
+            elif worksheet.acell(list[0]).value=="6":
+                rep_arr.append(TextSendMessage("建築物解鎖進度：【6/8】"))
+                rep_arr.append(carousel_template_message6)
+                line_bot_api.reply_message(event.reply_token,rep_arr)
+            elif worksheet.acell(list[0]).value=="7":
+                rep_arr.append(TextSendMessage("建築物解鎖進度：【7/8】"))
+                rep_arr.append(carousel_template_message4)
+                line_bot_api.reply_message(event.reply_token,rep_arr)
             else:
-                rep_arr.append(TextSendMessage("建築物解鎖進度：【2/9】"))
+                rep_arr.append(TextSendMessage("建築物解鎖進度：【8/8】"))
                 rep_arr.append(carousel_template_message2)
                 line_bot_api.reply_message(event.reply_token,rep_arr)   
         else:
