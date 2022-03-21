@@ -651,7 +651,7 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://pic.pimg.tw/mutsumi326/1428584966-421871247_n.jpg',
+                        thumbnail_image_url='https://i.imgur.com/jNbLZSd.jpeg',
                         title='濟時樓',
                         text='成功解鎖濟時樓！',
                         actions=[
@@ -735,7 +735,7 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://pic.pimg.tw/mutsumi326/1428584966-421871247_n.jpg',
+                        thumbnail_image_url='https://i.imgur.com/jNbLZSd.jpeg',
                         title='濟時樓',
                         text='成功解鎖濟時樓！',
                         actions=[
@@ -746,7 +746,7 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://pic.pimg.tw/mutsumi326/1428584966-421871247_n.jpg',
+                        thumbnail_image_url='https://i.imgur.com/dx980Kw.jpeg',
                         title='中美堂',
                         text='成功解鎖中美堂！',
                         actions=[
