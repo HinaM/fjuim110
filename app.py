@@ -567,7 +567,7 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://example.com/item2.jpg',
+                        thumbnail_image_url='http://jmo.mission.fju.edu.tw/showImg/subLabelImg/1_28_798_1.jpg',
                         title='伯達樓',
                         text='成功解鎖伯達樓！',
                         actions=[
@@ -585,7 +585,7 @@ def handle_message(event):
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://photox.pchome.com.tw/s13/moni101/112/135200602386/',
+                        thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/6/68/FJU_SSMG01.jpg',
                         title='利瑪竇大樓',
                         text='成功解鎖利瑪竇大樓！',
                         actions=[
