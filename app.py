@@ -651,7 +651,7 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='http://web.lib.fju.edu.tw/chi/sites/default/files/image/002_0.jpg',
+                        thumbnail_image_url='https://pic.pimg.tw/mutsumi326/1428584966-421871247_n.jpg',
                         title='濟時樓',
                         text='成功解鎖濟時樓！',
                         actions=[
@@ -735,7 +735,7 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='http://web.lib.fju.edu.tw/chi/sites/default/files/image/002_0.jpg',
+                        thumbnail_image_url='https://pic.pimg.tw/mutsumi326/1428584966-421871247_n.jpg',
                         title='濟時樓',
                         text='成功解鎖濟時樓！',
                         actions=[
