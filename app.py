@@ -512,68 +512,68 @@ def handle_message(event):
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://example.com/item1.jpg',
-                        title='this is menu1',
-                        text='description1',
+                        thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/6/68/FJU_SSMG01.jpg',
+                        title='利瑪竇大樓',
+                        text='成功解鎖利瑪竇大樓！',
                         actions=[
                             MessageAction(
-                                label='message1',
-                                text='message text1'
+                                label='建築介紹',
+                                text='利瑪竇大樓介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://pic.pimg.tw/fjumyblog/4a128e07da7c5_wn.jpg',
+                        title='聖言樓',
+                        text='成功解鎖聖言樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='聖言樓介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://fastly.4sqi.net/img/general/784x588/43402781_EW7mtusxKDYOM_Og5v3k7sFac_UPy0JeNmwAnTUQWgw.jpg',
+                        title='野聲樓',
+                        text='成功解鎖野聲樓！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='野聲樓介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/FJU_Religion03.jpg/800px-FJU_Religion03.jpg',
+                        title='淨心堂',
+                        text='成功解鎖淨心堂！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='淨心堂介紹'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://mapio.net/images-p/84019119.jpg',
+                        title='進修部',
+                        text='成功解鎖進修部！',
+                        actions=[
+                            MessageAction(
+                                label='建築介紹',
+                                text='進修部介紹'
                             )
                         ]
                     ),
                     CarouselColumn(
                         thumbnail_image_url='https://example.com/item2.jpg',
-                        title='this is menu2',
-                        text='description2',
+                        title='伯達樓',
+                        text='成功解鎖伯達樓！',
                         actions=[
                             MessageAction(
-                                label='message2',
-                                text='message text2'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://example.com/item2.jpg',
-                        title='this is menu2',
-                        text='description2',
-                        actions=[
-                            MessageAction(
-                                label='message2',
-                                text='message text2'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://example.com/item2.jpg',
-                        title='this is menu2',
-                        text='description2',
-                        actions=[
-                            MessageAction(
-                                label='message2',
-                                text='message text2'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://example.com/item2.jpg',
-                        title='this is menu2',
-                        text='description2',
-                        actions=[
-                            MessageAction(
-                                label='message2',
-                                text='message text2'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://example.com/item2.jpg',
-                        title='this is menu2',
-                        text='description2',
-                        actions=[
-                            MessageAction(
-                                label='message2',
-                                text='message text2'
+                                label='建築介紹',
+                                text='伯達樓介紹'
                             )
                         ]
                     )
