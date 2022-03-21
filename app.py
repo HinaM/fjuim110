@@ -640,7 +640,7 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='http://jmo.mission.fju.edu.tw/showImg/subLabelImg/1_28_798_1.jpg',
+                        thumbnail_image_url='https://pic.pimg.tw/mutsumi326/1428584966-421871247_n.jpg',
                         title='伯達樓',
                         text='成功解鎖伯達樓！',
                         actions=[
@@ -724,7 +724,7 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='http://jmo.mission.fju.edu.tw/showImg/subLabelImg/1_28_798_1.jpg',
+                        thumbnail_image_url='https://pic.pimg.tw/mutsumi326/1428584966-421871247_n.jpg',
                         title='伯達樓',
                         text='成功解鎖伯達樓！',
                         actions=[
@@ -742,17 +742,6 @@ def handle_message(event):
                             MessageAction(
                                 label='建築介紹',
                                 text='濟時樓介紹'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='http://peo.dsa.fju.edu.tw/showImg/menuImg/menuImg6.jpg',
-                        title='中美堂',
-                        text='成功解鎖中美堂！',
-                        actions=[
-                            MessageAction(
-                                label='建築介紹',
-                                text='中美堂介紹'
                             )
                         ]
                     ),
