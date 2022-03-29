@@ -64,8 +64,8 @@ def handle_message(event):
             #初始值設定
             for i in range(1,50):
                 worksheet.update(list[i],int(0))
-            for i in range(49,85):
-                worksheet.update(list[i],int(0))
+            '''for i in range(49,85):
+                worksheet.update(list[i],int(0))'''
             worksheet.update(list[4],int(1))
             confirm_template_message = TemplateSendMessage(
                 alt_text='請選擇視角',
