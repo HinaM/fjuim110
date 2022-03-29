@@ -51,8 +51,13 @@ def handle_message(event):
             userid_list=worksheet.col_values(1)
             x=len(userid_list)
             list=[]
-            for i in range(65,76):
+            for i in range(65,91):
                 list.append(chr(i)+str(x+1))
+            for j in range(65,67):    
+                for i in range(65,91):
+                    list.append(chr(j)+chr(i)+str(x+1))
+            for i in range(65,71):
+                list.append("C"+chr(i)+str(x+1))
             #寫入ID
             worksheet.update(list[0],event.source.user_id)
             #題目數量施工中

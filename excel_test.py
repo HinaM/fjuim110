@@ -5,25 +5,22 @@ sh=gc.open_by_key('1LozvTUSglnM_TtYO1tyDROkFkpX4lrlaVD1tC0911XM')
 worksheet=sh.sheet1
 
 res=worksheet.get_all_records()
-print(res)
+
 
 userid_list=worksheet.col_values(1)
-print(userid_list)
-'''
-list_c=[]
-for i in range(69,76):
-    list_c.append(chr(i)+str(2))
 
-for i in range(len(list_c)):
-    if worksheet.acell(list_c[i]).value=="1":
-        print(ord(list_c[i][0])-68)
-'''
-if 'Ud184a816c79cdc37caaf18bc97051cec' in userid_list:
-    list_c=[]
-    for i in range(69,76):
-        list_c.append(chr(i)+str(2))
-    for i in range(len(list_c)):
-        if worksheet.acell(list_c[i]).value=="1":
-            ques=ord(list_c[i][0])-68
-print(type(ques))
-print(worksheet.acell("C2").value)
+x=len(userid_list)
+for i in range(0,x):
+    if userid_list[i]=='Ud184a816c79cdc37caaf18bc97051cec':
+        i+=1
+
+print(i)
+list=[]
+for x in range(65,91):
+    list.append(chr(x)+str(i))
+for y in range(65,67):    
+    for x in range(65,91):
+        list.append(chr(y)+chr(x)+str(i))
+for x in range(65,71):
+    list.append("C"+chr(x)+str(i))
+print(list)
