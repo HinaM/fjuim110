@@ -61,7 +61,7 @@ def handle_message(event):
             #寫入ID
             worksheet.update(list[0],event.source.user_id)
             #題目數量施工中
-            #初始值設定
+            #初始值設定到AX
             for i in range(1,50):
                 worksheet.update(list[i],int(0))
             '''for i in range(49,85):
@@ -284,31 +284,8 @@ def handle_message(event):
             for i in range(len(userid_list)):
                 if userid_list[i]==event.source.user_id:
                     j=i+1
-            list=[]
-            for i in range(66,76):
-                list.append(chr(i)+str(j))
-            #題目數量施工中
-            #初始值設定
-            for i in range(0,len(list)):
-                worksheet.update(list[i],int(0))
-            worksheet.update(list[3],int(1))
-            confirm_template_message = TemplateSendMessage(
-                alt_text='請選擇視角',
-                template=ConfirmTemplate(
-                    text='選擇以日翔（男主角）或是曉光（女主角）的視角遊玩。',
-                    actions=[
-                        MessageAction(
-                            label='日翔',
-                            text='以日翔的視角進行遊戲'
-                        ),
-                        MessageAction(
-                            label='曉光',
-                            text='以曉光的視角進行遊戲'
-                        )
-                    ]
-                )
-            )
-            line_bot_api.reply_message(event.reply_token,confirm_template_message)
+            worksheet.delete_row(j)
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(text="已重置遊戲，請輸入「開始遊戲」。"))
         #未寫入ID
         else:
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text="還沒建立開始遊戲喔，請輸入「開始遊戲」建立個人檔案。"))
