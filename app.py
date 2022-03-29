@@ -62,7 +62,9 @@ def handle_message(event):
             worksheet.update(list[0],event.source.user_id)
             #題目數量施工中
             #初始值設定
-            for i in range(1,len(list)):
+            for i in range(1,60):
+                worksheet.update(list[i],int(0))
+            for i in range(61,85):
                 worksheet.update(list[i],int(0))
             worksheet.update(list[4],int(1))
             confirm_template_message = TemplateSendMessage(

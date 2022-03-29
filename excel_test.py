@@ -24,3 +24,4 @@ for y in range(65,67):
 for x in range(65,71):
     list.append("C"+chr(x)+str(i))
 print(list)
+print(len(list))
