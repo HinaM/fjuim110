@@ -10,6 +10,7 @@ from linebot.exceptions import (
 from linebot.models import *
 from fileinput import filename
 import gspread
+from matplotlib.pyplot import text
 
 gc=gspread.service_account(filename='fjuim-340916-7e527f907c19.json')
 sh=gc.open_by_key('1LozvTUSglnM_TtYO1tyDROkFkpX4lrlaVD1tC0911XM')
@@ -56,7 +57,7 @@ def handle_message(event):
             for j in range(65,67):    
                 for i in range(65,91):
                     list.append(chr(j)+chr(i)+str(x+1))
-            for i in range(65,71):
+            for i in range(65,70):
                 list.append("C"+chr(i)+str(x+1))
             #寫入ID
             worksheet.update(list[0],event.source.user_id)
@@ -64,45 +65,56 @@ def handle_message(event):
             #初始值設定到AX
             for i in range(1,50):
                 worksheet.update(list[i],int(0))
-            '''for i in range(49,85):
-                worksheet.update(list[i],int(0))'''
             worksheet.update(list[4],int(1))
-            confirm_template_message = TemplateSendMessage(
-                alt_text='請選擇視角',
-                template=ConfirmTemplate(
-                    text='選擇以日翔（男主角）或是曉光（女主角）的視角遊玩。',
-                    actions=[
-                        MessageAction(
-                            label='日翔',
-                            text='以日翔的視角進行遊戲'
+            list_talk.append(TextSendMessage("選擇遊戲視角"))
+            list_talk=[]
+            image_carousel_template_message = TemplateSendMessage(
+                alt_text='選擇視角',
+                template=ImageCarouselTemplate(
+                    columns=[
+                        ImageCarouselColumn(
+                            image_url='https://ppt.cc/f6njPx@.png',
+                            action=MessageTemplateAction(
+                                label='日翔',
+                                text='以日翔的視角進行遊戲'
+                            )
                         ),
-                        MessageAction(
-                            label='曉光',
-                            text='以曉光的視角進行遊戲'
+                        ImageCarouselColumn(
+                            image_url='https://ppt.cc/fAppWx@.png',
+                            action=MessageTemplateAction(
+                                label='曉光',
+                                text='以曉光的視角進行遊戲'
+                            )
                         )
                     ]
                 )
             )
-            line_bot_api.reply_message(event.reply_token,confirm_template_message)
+            list_talk.append(image_carousel_template_message)
+            line_bot_api.reply_message(event.reply_token,list_talk)
 
     elif event.message.text=="選擇視角":
-        confirm_template_message = TemplateSendMessage(
+        image_carousel_template_message = TemplateSendMessage(
                 alt_text='選擇視角',
-                template=ConfirmTemplate(
-                    text='選擇以日翔（男主角）或是曉光（女主角）的視角遊玩。',
-                    actions=[
-                        MessageAction(
-                            label='日翔',
-                            text='以日翔的視角進行遊戲'
+                template=ImageCarouselTemplate(
+                    columns=[
+                        ImageCarouselColumn(
+                            image_url='https://ppt.cc/f6njPx@.png',
+                            action=MessageTemplateAction(
+                                label='日翔',
+                                text='以日翔的視角進行遊戲'
+                            )
                         ),
-                        MessageAction(
-                            label='曉光',
-                            text='以曉光的視角進行遊戲'
+                        ImageCarouselColumn(
+                            image_url='https://ppt.cc/fAppWx@.png',
+                            action=MessageTemplateAction(
+                                label='曉光',
+                                text='以曉光的視角進行遊戲'
+                            )
                         )
                     ]
                 )
             )
-        line_bot_api.reply_message(event.reply_token,confirm_template_message)    
+        line_bot_api.reply_message(event.reply_token,image_carousel_template_message)    
 
     elif event.message.text=="以日翔的視角進行遊戲":
         userid_list=worksheet.col_values(1)
