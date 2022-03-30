@@ -73,14 +73,14 @@ def handle_message(event):
                 template=ImageCarouselTemplate(
                     columns=[
                         ImageCarouselColumn(
-                            image_url='https://ppt.cc/f6njPx@.png',
+                            image_url='https://upload.cc/i1/2022/03/30/K9D6Xw.jpg?fbclid=IwAR3TXV-o2OBUFuPpOursWi-w4pik7hG__iqpSahR59P7CcBaeb76ZvWKQPM',
                             action=MessageTemplateAction(
                                 label='日翔',
                                 text='以日翔的視角進行遊戲'
                             )
                         ),
                         ImageCarouselColumn(
-                            image_url='https://ppt.cc/fAppWx@.png',
+                            image_url='https://upload.cc/i1/2022/03/30/dRcCSl.jpg?fbclid=IwAR0LgBlXQ2LP-Ag99jBXJALWmbv2zF-DUX9BXp6dTEGn494AIAUKrxOr6q4',
                             action=MessageTemplateAction(
                                 label='曉光',
                                 text='以曉光的視角進行遊戲'
@@ -107,7 +107,7 @@ def handle_message(event):
                 list=[]
                 list.append(ImageSendMessage(original_content_url='https://i.imgur.com/2cCaBmx.jpeg', preview_image_url='https://i.imgur.com/2cCaBmx.jpeg'))
                 list.append(TextSendMessage(text="「唉......今天又被塞了一堆工作啊......」成為社畜後的日翔，每天過著上班族朝九晚五的生活。早上和一堆人擠著去上班，工作又多又忙連喘息的時間都沒有，晚上回到家早就累壞了。"+'\n'+'「如果能回到大學時期就好了啊......」某天工作回家的日翔突然感嘆起大學生活，大學可謂人生的最顛峰時期，不但沒有工作壓力的負擔，還有很多空閒時間可以讓他盡情做想做的事。這時，日翔的電子信箱突然跳出了一封信，開頭標題寫著「想回到過去嗎？」'+'\n'+'該不會是被誰監視了？雖然這麼想，出於好奇日翔還是點開了信件，內容寫著「路過的小精靈聽到你的願望送上的檔案，並沒有病毒。」，還附上了一個檔案「Code-140.136.py」。'+'\n'+'……哪個詐騙集團會說自己不是詐騙集團呢，日翔吐槽道。'+'/n'+'或許是想回到過去的願望過於強烈，日翔還是不由自主地下載了檔案。'))
-                list.append(ImageSendMessage(original_content_url='https://i.imgur.com/2cCaBmx.jpeg', preview_image_url='https://i.imgur.com/2cCaBmx.jpeg'))
+                list.append(ImageSendMessage(original_content_url='https://upload.cc/i1/2022/03/06/q4DPkj.png', preview_image_url='https://upload.cc/i1/2022/03/06/q4DPkj.png'))
                 list.append(TextSendMessage(text='#1 檔案只有短短幾行程式碼，請問日翔該輸入什麼才能執行此函式，讓結果非None呢？（請輸入半形英文字母）'))
                 line_bot_api.reply_message(event.reply_token,list)
             #ID已寫入建立且視角!=0
@@ -150,7 +150,7 @@ def handle_message(event):
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
+                        thumbnail_image_url='https://upload.cc/i1/2022/03/30/K9D6Xw.jpg?fbclid=IwAR3TXV-o2OBUFuPpOursWi-w4pik7hG__iqpSahR59P7CcBaeb76ZvWKQPM',
                         title='游日翔',
                         text='心思細膩的青年',
                         actions=[
@@ -161,7 +161,7 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://upload.cc/i1/2022/03/06/LEFq8S.png',
+                        thumbnail_image_url='https://upload.cc/i1/2022/03/30/dRcCSl.jpg?fbclid=IwAR0LgBlXQ2LP-Ag99jBXJALWmbv2zF-DUX9BXp6dTEGn494AIAUKrxOr6q4',
                         title='何曉光',
                         text='研精靜慮的才女',
                         actions=[
@@ -249,14 +249,14 @@ def handle_message(event):
                     template=ImageCarouselTemplate(
                         columns=[
                             ImageCarouselColumn(
-                                image_url='https://ppt.cc/f6njPx@.png',
+                                image_url='https://upload.cc/i1/2022/03/30/K9D6Xw.jpg?fbclid=IwAR3TXV-o2OBUFuPpOursWi-w4pik7hG__iqpSahR59P7CcBaeb76ZvWKQPM',
                                 action=MessageTemplateAction(
                                     label='日翔',
                                     text='以日翔的視角進行遊戲'
                                 )
                             ),
                             ImageCarouselColumn(
-                                image_url='https://ppt.cc/fAppWx@.png',
+                                image_url='https://upload.cc/i1/2022/03/30/dRcCSl.jpg?fbclid=IwAR0LgBlXQ2LP-Ag99jBXJALWmbv2zF-DUX9BXp6dTEGn494AIAUKrxOr6q4',
                                 action=MessageTemplateAction(
                                     label='曉光',
                                     text='以曉光的視角進行遊戲'
