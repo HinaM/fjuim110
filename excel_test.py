@@ -21,7 +21,9 @@ list.append("E"+str(j))
 list.append("F"+str(j))
 list.append("AY"+str(j))           
 if 'Ud184a816c79cdc37caaf18bc97051cec' in userid_list and worksheet.acell(list[0]).value=='1':
+    worksheet.update_acell(list[0],int(2))
+    worksheet.update_acell(list[1],int(1))
+    worksheet.update_acell(list[2],int(0))
     print('True')
 else:
     print('False')
-print(worksheet.acell(list[0]).value)
