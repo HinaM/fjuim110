@@ -66,8 +66,8 @@ def handle_message(event):
             for i in range(1,50):
                 worksheet.update(list[i],int(0))
             worksheet.update(list[4],int(1))
-            list_talk.append(TextSendMessage("選擇遊戲視角"))
             list_talk=[]
+            list_talk.append(TextSendMessage("選擇遊戲視角"))
             image_carousel_template_message = TemplateSendMessage(
                 alt_text='選擇視角',
                 template=ImageCarouselTemplate(
