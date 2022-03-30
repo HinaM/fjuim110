@@ -151,7 +151,7 @@ def handle_message(event):
         list.append("F"+str(j))
         list.append("AY"+str(j))
         #已經寫入id且Q1==1改Q1==2，Q2==1，其他錯誤           
-        if event.source.user_id in userid_list and worksheet.acell(list[0]).value==1:
+        if event.source.user_id in userid_list and worksheet.acell(list[0]).value=='1':
             worksheet.update_acell(list[0],int(2))
             worksheet.update_acell(list[1],int(1))
             worksheet.update_acell(list[2],int(0))

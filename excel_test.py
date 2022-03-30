@@ -12,3 +12,16 @@ userid_list=worksheet.col_values(1)
 user=worksheet.row_values(3)
 print(user)
 #worksheet.delete_row(3)
+if 'Ud184a816c79cdc37caaf18bc97051cec' in userid_list:
+    for i in range(len(userid_list)):
+        if userid_list[i]=='Ud184a816c79cdc37caaf18bc97051cec':
+            j=i+1
+list=[]
+list.append("E"+str(j))
+list.append("F"+str(j))
+list.append("AY"+str(j))           
+if 'Ud184a816c79cdc37caaf18bc97051cec' in userid_list and worksheet.acell(list[0]).value=='1':
+    print('True')
+else:
+    print('False')
+print(worksheet.acell(list[0]).value)
