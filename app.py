@@ -90,31 +90,7 @@ def handle_message(event):
                 )
             )
             list_talk.append(image_carousel_template_message)
-            line_bot_api.reply_message(event.reply_token,list_talk)
-
-    elif event.message.text=="選擇視角":
-        image_carousel_template_message = TemplateSendMessage(
-                alt_text='選擇視角',
-                template=ImageCarouselTemplate(
-                    columns=[
-                        ImageCarouselColumn(
-                            image_url='https://ppt.cc/f6njPx@.png',
-                            action=MessageTemplateAction(
-                                label='日翔',
-                                text='以日翔的視角進行遊戲'
-                            )
-                        ),
-                        ImageCarouselColumn(
-                            image_url='https://ppt.cc/fAppWx@.png',
-                            action=MessageTemplateAction(
-                                label='曉光',
-                                text='以曉光的視角進行遊戲'
-                            )
-                        )
-                    ]
-                )
-            )
-        line_bot_api.reply_message(event.reply_token,image_carousel_template_message)    
+            line_bot_api.reply_message(event.reply_token,list_talk)   
 
     elif event.message.text=="以日翔的視角進行遊戲":
         userid_list=worksheet.col_values(1)
@@ -128,7 +104,12 @@ def handle_message(event):
             #ID已寫入且未選擇視角
             if worksheet.acell(list[0]).value=="0":
                 worksheet.update(list[0],int(1))
-                line_bot_api.reply_message(event.reply_token,TextSendMessage(text="選擇了日翔視角！"))
+                list=[]
+                list.append(ImageSendMessage(original_content_url='https://i.imgur.com/2cCaBmx.jpeg', preview_image_url='https://i.imgur.com/2cCaBmx.jpeg'))
+                list.append(TextSendMessage(text="「唉......今天又被塞了一堆工作啊......」成為社畜後的日翔，每天過著上班族朝九晚五的生活。早上和一堆人擠著去上班，工作又多又忙連喘息的時間都沒有，晚上回到家早就累壞了。"+'\n'+'「如果能回到大學時期就好了啊......」某天工作回家的日翔突然感嘆起大學生活，大學可謂人生的最顛峰時期，不但沒有工作壓力的負擔，還有很多空閒時間可以讓他盡情做想做的事。這時，日翔的電子信箱突然跳出了一封信，開頭標題寫著「想回到過去嗎？」'+'\n'+'該不會是被誰監視了？雖然這麼想，出於好奇日翔還是點開了信件，內容寫著「路過的小精靈聽到你的願望送上的檔案，並沒有病毒。」，還附上了一個檔案「Code-140.136.py」。'+'\n'+'……哪個詐騙集團會說自己不是詐騙集團呢，日翔吐槽道。'+'/n'+'或許是想回到過去的願望過於強烈，日翔還是不由自主地下載了檔案。'))
+                list.append(ImageSendMessage(original_content_url='https://i.imgur.com/2cCaBmx.jpeg', preview_image_url='https://i.imgur.com/2cCaBmx.jpeg'))
+                list.append(TextSendMessage(text='#1 檔案只有短短幾行程式碼，請問日翔該輸入什麼才能執行此函式，讓結果非None呢？（請輸入半形英文字母）'))
+                line_bot_api.reply_message(event.reply_token,list)
             #ID已寫入建立且視角!=0
             elif worksheet.acell(list[0]).value=="1":
                 line_bot_api.reply_message(event.reply_token,TextSendMessage(text="已經選擇日翔視角。"))
@@ -171,7 +152,7 @@ def handle_message(event):
                     CarouselColumn(
                         thumbnail_image_url='https://upload.cc/i1/2022/03/06/TCXEeK.png',
                         title='游日翔',
-                        text='男主角',
+                        text='心思細膩的青年',
                         actions=[
                             MessageAction(
                                 label='角色資料',
@@ -182,7 +163,7 @@ def handle_message(event):
                     CarouselColumn(
                         thumbnail_image_url='https://upload.cc/i1/2022/03/06/LEFq8S.png',
                         title='何曉光',
-                        text='女主角',
+                        text='研精靜慮的才女',
                         actions=[
                             MessageAction(
                                 label='角色資料',
@@ -193,7 +174,7 @@ def handle_message(event):
                     CarouselColumn(
                         thumbnail_image_url='https://upload.cc/i1/2022/03/03/8rgJCv.png',
                         title='葉司晨',
-                        text='男主朋友',
+                        text='陽光朝氣的笨蛋',
                         actions=[
                             MessageAction(
                                 label='角色資料',
@@ -204,7 +185,7 @@ def handle_message(event):
                     CarouselColumn(
                         thumbnail_image_url='https://upload.cc/i1/2022/03/15/yvIkxV.png',
                         title='林真澄',
-                        text='女主朋友',
+                        text='塔羅占卜的能手',
                         actions=[
                             MessageAction(
                                 label='角色資料',
@@ -215,7 +196,7 @@ def handle_message(event):
                     CarouselColumn(
                         thumbnail_image_url='https://upload.cc/i1/2022/03/03/UvGMpX.png',
                         title='馬宇恒',
-                        text='學霸',
+                        text='自視甚高的學霸',
                         actions=[
                             MessageAction(
                                 label='角色資料',
@@ -228,13 +209,13 @@ def handle_message(event):
         )
         line_bot_api.reply_message(event.reply_token,carousel_template_message)
     elif event.message.text=="日翔角色資料":
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="誤打誤撞考上輔大資管系的普通學生日翔，在學間遇到自己的真命天女——曉光，卻因為成績差感到自卑而不敢進一步追求。在畢業後收到來自神祕人的「Code/140.136」回到過去，為了不再留下遺憾而發誓認真度過每一天。觀察力十分敏銳，總能注意到一些小細節。"))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="誤打誤撞考上輔大資管系的普通學生日翔，在學間遇到自己的真命天女——曉光，卻因為成績差而不敢進一步追求。內心思緒豐富喜歡吐槽，且觀察力十分敏銳，總能注意到一些小細節。稱呼死黨司晨為「阿司」。"))
     elif event.message.text=="曉光角色資料":
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="以全校第一的成績進入輔大資管系，無論何時何地都在讀書。平時都擺著一張撲克臉，讓人難以親近的樣子。不過一看到小動物時，臉上總是洋溢著幸福的笑容。家裡養了一隻叫德魯貝的貓。在畢業後收到來自神祕人的「Code/140.136」，為了改變過去膽小、不敢邁出步伐的自己而回到過去。"))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="以在校成績第一繁星進入輔大資管系，一有空閒就會拿書出來閱讀。平時都擺著一張撲克臉，讓人難以親近的樣子。除了與好友真澄的關係比較親密之外，鮮少看到她與其他人有互動。但若吃到學校的食科冰，臉上便會洋溢出幸福的笑容。家裡養了一隻叫德魯貝的貓。"))
     elif event.message.text=="司晨角色資料":
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="日翔的死黨。和日翔一起去打籃球、吃飯、上課，雖然總是冒冒失失的，但一直都把朋友擺在第一位，常常把「兄弟就是要有福同享、有難同當啊」掛在嘴邊。"))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="日翔的死黨。和日翔一起去打籃球、吃飯、上課，雖然總是冒冒失失的，但一直都把朋友擺在第一位，偶爾會顯得可靠。喜歡幫人取奇怪的綽號，稱呼日翔為「阿日」。"))
     elif event.message.text=="宇恒角色資料":
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="「萬般皆下品，唯有讀書高」是他的人生名言，與曉光角逐班上的一二名。羽山也喜歡同為學霸的曉光，為了不讓日翔靠近曉光，常常提出問題刁難日翔。"))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="擅長讀書跟coding，總是與曉光角逐班上的一二名。宇桓也喜歡同為學霸的曉光，為了不讓日翔靠近曉光，常常提出問題刁難日翔。出手闊綽，家裡似乎很有錢，把領到的書卷獎當零頭。"))
     elif event.message.text=="真澄角色資料":
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text="曉光在通識課程中認識的甲班同學，對任何人最初都抱有警戒心，熟識後會發現真澄只是不知如何開口向他人表達關心。對自我要求很高，課程總是排得很滿，因此常常衝堂改修乙班的課。"))
     
@@ -263,23 +244,28 @@ def handle_message(event):
                     ques=str(ord(list_c[i][0])-68)
             #還沒選擇視角
             if worksheet.acell(list[2]).value=="0":
-                confirm_template_message = TemplateSendMessage(
-                    alt_text='請選擇視角',
-                    template=ConfirmTemplate(
-                        text='選擇以日翔（男主角）或是曉光（女主角）的視角遊玩。',
-                        actions=[
-                            MessageAction(
-                                label='日翔',
-                                text='以日翔的視角進行遊戲'
+                image_carousel_template_message = TemplateSendMessage(
+                    alt_text='選擇視角',
+                    template=ImageCarouselTemplate(
+                        columns=[
+                            ImageCarouselColumn(
+                                image_url='https://ppt.cc/f6njPx@.png',
+                                action=MessageTemplateAction(
+                                    label='日翔',
+                                    text='以日翔的視角進行遊戲'
+                                )
                             ),
-                            MessageAction(
-                                label='曉光',
-                                text='以曉光的視角進行遊戲'
+                            ImageCarouselColumn(
+                                image_url='https://ppt.cc/fAppWx@.png',
+                                action=MessageTemplateAction(
+                                    label='曉光',
+                                    text='以曉光的視角進行遊戲'
+                                )
                             )
                         ]
                     )
                 )
-                line_bot_api.reply_message(event.reply_token,confirm_template_message)
+                line_bot_api.reply_message(event.reply_token,image_carousel_template_message)
             #日向視角
             elif worksheet.acell(list[2]).value=="1":
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text="玩家選擇視角：日翔"+"\n"+"目前關卡：#"+ques+"\n"+"解鎖物件數：【"+worksheet.acell(list[1]).value+"/8】"))
